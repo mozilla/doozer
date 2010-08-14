@@ -1,0 +1,12 @@
+{# vim: set ts=2 et sts=2 sw=2: #}
+{% extends "base.html" %}
+{% set title = _('Page Not Found') %}
+
+{% block content %}
+
+<h2>{{ title }}</h2>
+
+<p>{% trans %}Sorry, we couldn't find the page you were looking for. Please,
+try searching our site using the form below.{% endtrans %}</p>
+
+{% endblock %}
