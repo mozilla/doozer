@@ -1,7 +1,10 @@
 # Django settings for doozer project.
+import logging
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+
+LOG_LEVEL = logging.DEBUG
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
