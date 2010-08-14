@@ -3,3 +3,5 @@
 Jinja2==2.2.1
 -e git://github.com/jbalogh/jingo.git@c73d2c55182301e6f3ce507fc9a17ea843fed24f#egg=jingo
 -e git://github.com/jbalogh/schematic.git#egg=schematic
+
+python-memcached
