@@ -21,16 +21,16 @@ class GameAdmin(admin.ModelAdmin):
     list_display = ('name', 'creator', 'url', short_description, 'is_approved')
     list_filter = ('is_approved',)
     prepopulated_fields = {'slug': ('name',)}
-    actions = ['approve_game', 'reject_game', 'unreview_game']
+    actions = ['approve_games', 'reject_games', 'unreview_games']
     inlines = [ScreenshotInline,]
 
-    def approve_game(self, request, queryset):
+    def approve_games(self, request, queryset):
         queryset.update(is_approved=True, reviewed_by=request.user)
 
-    def unreview_game(self, request, queryset):
+    def unreview_games(self, request, queryset):
         queryset.update(is_approved=None, reviewed_by=None)
 
-    def reject_game(self, request, queryset):
+    def reject_games(self, request, queryset):
         queryset.update(is_approved=False, reviewed_by=request.user)
 
 
