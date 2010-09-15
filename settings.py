@@ -110,3 +110,6 @@ ACCOUNT_ACTIVATION_DAYS = 7
 
 # Default next page after login
 LOGIN_REDIRECT_URL = '/'
+
+# Appended to MEDIA_URL for uploads
+IMAGE_UPLOAD_PATH = 'uploads/'
