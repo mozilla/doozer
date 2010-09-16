@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.core.context_processors import csrf
 from django.core.urlresolvers import reverse
+from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 
@@ -13,8 +13,7 @@ from games.models import Game, Screenshot
 @login_required
 def create(request):
     """Create a new game."""
-    c = {}
-    c.update(csrf(request))
+    form = GameForm()
 
     if request.POST:
         form = GameForm(request.POST)
@@ -26,21 +25,15 @@ def create(request):
             messages.info(request, "Your game was successfully saved!")
             return HttpResponseRedirect(new_game.get_absolute_url())
 
-        c.update({'form': form})
-
-        return render(request, 'games/create.html', c)
-
-    form = GameForm()
-    c.update({'form': form})
-    return render(request, 'games/create.html', c)
+    return render(request, 'games/create.html', {'form': form})
 
 
 @login_required
 def edit(request, game_id):
     """Edit an existing game."""
     game = get_object_or_404(Game, creator=request.user, pk=game_id)
-    c = {'game': game, 'success': False}
-    c.update(csrf(request))
+    form = GameForm(instance=game)
+    c = {'game': game, 'form': form}
 
     if request.POST:
         form = GameForm(request.POST, instance=game)
@@ -51,10 +44,6 @@ def edit(request, game_id):
             messages.info(request, "Your changes were saved!")
             return HttpResponseRedirect(game.get_absolute_url())
 
-        return render(request, 'games/edit.html', c)
-
-    form = GameForm(instance=game)
-    c.update({'form': form})
     return render(request, 'games/edit.html', c)
 
 
@@ -63,7 +52,6 @@ def delete(request, game_id):
     """Delete an existing game."""
 
     game = get_object_or_404(Game, id=game_id, creator=request.user)
-    c = {'game': game}
 
     if request.POST:
         msg = 'You have deleted the game "%s".' % game.name
@@ -72,12 +60,14 @@ def delete(request, game_id):
         messages.info(request, msg)
         return HttpResponseRedirect(reverse('games.view_list'))
 
-    return render(request, 'games/delete.html', c)
+    return render(request, 'games/delete.html', {'game': game})
 
 
 def view(request, game_id, slug=None):
-    """View one game."""
-    game = get_object_or_404(Game, id=game_id)
+    """View one game. It must be approved or yours."""
+    game = get_object_or_404(Game,
+        Q(is_approved=True) | Q(creator=request.user),
+        id=game_id)
     return render(request, 'games/view.html', {'game': game})
 
 

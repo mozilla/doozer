@@ -8,8 +8,8 @@ CREATE TABLE `games_game` (
     `slug` varchar(50) NOT NULL,
     `description` longtext NOT NULL,
     `url` varchar(200) NOT NULL,
-    `source` varchar(200),
-    `resources` longtext,
+    `source` varchar(200) NOT NULL,
+    `resources` longtext NOT NULL,
     `is_approved` bool,
     `reviewed_by_id` integer
 )

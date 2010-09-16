@@ -14,8 +14,8 @@ class Game(ModelBase, TimestampMixin):
     slug = models.SlugField()
     description = models.TextField()
     url = models.URLField()
-    source = models.URLField(null=True, blank=True)
-    resources = models.TextField(null=True, blank=True)
+    source = models.URLField(blank=True)
+    resources = models.TextField(blank=True)
     is_approved = models.NullBooleanField(default=None, blank=True,
                                           db_index=True)
     reviewed_by = models.ForeignKey(User, related_name='reviewed',
