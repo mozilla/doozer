@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Register</h1>
+  <p>Fill in the information below to get started!</p>
+  {% if form.errors %}
+    <ul class="errorlist">
+      <li>Please fix the errors and submit again.</li>
+    </ul>
+  {% endif %}
+  <form method="POST" class="standard" action="">
+    {% csrf_token %}
+    <ol>
+      {{ form.as_ul }}
+    </ol>
+    <input type="submit" class="btn post" value="Register" />	
+  </form>
+{% endblock %}

@@ -1,7 +1,9 @@
 # Requirements to run Doozer
 -e svn+http://code.djangoproject.com/svn/django/trunk@13302#egg=Django
 Jinja2==2.2.1
+-e git://github.com/clouserw/tower.git#egg=tower
 -e git://github.com/jbalogh/jingo.git@c73d2c55182301e6f3ce507fc9a17ea843fed24f#egg=jingo
 -e git://github.com/jbalogh/schematic.git#egg=schematic
 -e git://github.com/jbalogh/django-cache-machine.git#egg=django-cache-machine
 python-memcached
+django-registration==0.7

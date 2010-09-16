@@ -1,10 +1,16 @@
 # Django settings for doozer project.
 import logging
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 LOG_LEVEL = logging.DEBUG
+
+ROOT = os.path.dirname(os.path.abspath(__file__))
+path = lambda *a: os.path.join(ROOT, *a)
+
+ROOT_PACKAGE = os.path.basename(ROOT)
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
@@ -84,6 +90,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    path('templates'),
 )
 
 INSTALLED_APPS = (
@@ -92,7 +99,14 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-    # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
+    'registration',
     'games',
+    'core',
 )
+
+# Account activation period
+ACCOUNT_ACTIVATION_DAYS = 7
+
+# Default next page after login
+LOGIN_REDIRECT_URL = '/'

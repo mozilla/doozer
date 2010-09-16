@@ -1,0 +1,7 @@
+Welcome to Mozilla Games(TODO?!)!
+
+We hope that you will enjoy the site, but first you will need to activate your 
+account with us.  To do so, please navigate to the link below or paste it in
+your browser:
+    
+    https://{{ site.domain }}/accounts/activate/{{ activation_key }}/
