@@ -5,7 +5,7 @@ CREATE TABLE `games_game` (
     `updated` datetime NOT NULL,
     `creator_id` integer NOT NULL,
     `name` varchar(255) NOT NULL,
-    `slug` varchar(50) NOT NULL UNIQUE,
+    `slug` varchar(50) NOT NULL,
     `description` longtext NOT NULL,
     `url` varchar(200) NOT NULL,
     `source` varchar(200),
@@ -28,6 +28,7 @@ ALTER TABLE `games_screenshot` ADD CONSTRAINT `game_id_refs_id_5e86c673` FOREIGN
 CREATE INDEX `games_game_3216ff68` ON `games_game` (`created`);
 CREATE INDEX `games_game_8aac229` ON `games_game` (`updated`);
 CREATE INDEX `games_game_685aee7` ON `games_game` (`creator_id`);
+CREATE INDEX `games_game_56ae2a2a` ON `games_game` (`slug`);
 CREATE INDEX `games_game_3e1cf92e` ON `games_game` (`is_approved`);
 CREATE INDEX `games_game_362d9b12` ON `games_game` (`reviewed_by_id`);
 CREATE INDEX `games_screenshot_3216ff68` ON `games_screenshot` (`created`);
