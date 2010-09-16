@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <article>
+  <h1>Games</h1>
+  {% for game in games %}
+    <section class="game" id="game-{{ game.id }}">
+      <h1>{{ game.name }}</h1>
+      <p>{{ game.description }}</p>
+      <ul>
+        <li><a href="{{ game.url }}">Play</a></li>
+        {% if game.source %}
+          <li><a href="{{ game.source }}">See the source</a></li>
+        {% endif %}
+      </ul>
+    </section>
+  {% endfor %}
+  </article>
+{% endblock %}

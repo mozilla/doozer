@@ -105,8 +105,21 @@ INSTALLED_APPS = (
     'core',
 )
 
+TEMPATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.contrib.messages.context_processors.messages',
+    'django.core.context_processors.csrf',
+    'django.core.context_processors.request',
+)
+
 # Account activation period
 ACCOUNT_ACTIVATION_DAYS = 7
 
 # Default next page after login
 LOGIN_REDIRECT_URL = '/'
+
+# Appended to MEDIA_URL for uploads
+IMAGE_UPLOAD_PATH = 'uploads/'

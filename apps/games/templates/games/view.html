@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <article class="game">
+    <h1>{{ game.name }}</h1>
+    <p>{{ game.description }}</h1>
+
+    {% if game.screenshots %}
+      <ul class="screenshots">
+      {% for screenshot in game.screenshots %}
+        <li id="screenshot-{{ screenshot.id }}">
+          <img src="{{ screenshot.get_absolute_url }}">
+        </li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  </article>
+{% endblock %}
