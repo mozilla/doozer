@@ -70,7 +70,7 @@ def delete(request, game_id):
         game.delete()
 
         messages.info(request, msg)
-        return HttpResponseRedirect(reverse('games.list'))
+        return HttpResponseRedirect(reverse('games.view_list'))
 
     return render(request, 'games/delete.html', c)
 

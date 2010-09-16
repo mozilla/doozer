@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    <h1>Delete game?</h1>
+    <p>You are about to delete the game <em>{{ game.name }}</em>.
+      <strong>This cannot be undone!</strong> Are you sure?</p>
+
+    <input type="submit" name="delete" value="Yes, delete it!"/>
+    <a href="{{ game.get_absolute_url }}">Cancel</a>
+  </form>
+{% endblock%}
