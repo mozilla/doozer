@@ -5,9 +5,9 @@
     <h1>{{ game.name }}</h1>
     <p>{{ game.description }}</h1>
 
-    {% if game.screenshots %}
+    {% if game.screenshot_set.all %}
       <ul class="screenshots">
-      {% for screenshot in game.screenshots %}
+      {% for screenshot in game.screenshot_set.all %}
         <li id="screenshot-{{ screenshot.id }}">
           <img src="{{ screenshot.get_absolute_url }}">
         </li>

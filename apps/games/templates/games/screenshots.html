@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Screenshots for {{ game.name }}</h1>
+  {% if game.screenshot_set.all %}
+    <ul>
+    {% for screenshot in game.screenshot_set.all %}
+      <li>
+        <img src="{{ screenshot.get_absolute_url }}"/>
+        <a href="{% url games.screenshot_delete game.id,screenshot.id %}"
+          class="screenshot-delete">Delete</a>
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2>Upload a new screenshot.</h2>
+    <ul class="screenshot-form">
+      {{ form.as_ul }}
+    </ul>
+    <input type="submit" value="Upload!">
+  </form>
+{% endblock %}

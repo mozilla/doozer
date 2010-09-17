@@ -77,3 +77,43 @@ def view_list(request):
     # TODO(james) Paginate
     games = Game.objects.filter(is_approved=True)
     return render(request, 'games/list.html', {'games': games})
+
+
+@login_required
+def screenshots(request, game_id):
+    """View/edit screenshots for a game."""
+    game = get_object_or_404(Game, id=game_id, creator=request.user)
+    form = ScreenshotForm()
+
+    if request.POST:
+        form = ScreenshotForm(request.POST, request.FILES)
+        if form.is_valid():
+            up_file = request.FILES['file']
+            new_screenshot = form.save(commit=False)
+            new_screenshot.game = game
+            new_screenshot.save()
+
+            messages.info(request, "Your screenshot has been uploaded!")
+            return HttpResponseRedirect(reverse('games.screenshots',
+                                                args=[game.id]))
+
+    c = {'game': game, 'form': form}
+    return render(request, 'games/screenshots.html', c)
+
+
+@login_required
+def screenshot_delete(request, game_id, screenshot_id):
+    """Delete a screenshot."""
+    game = get_object_or_404(Game, id=game_id, creator=request.user)
+    screenshot = get_object_or_404(Screenshot, id=screenshot_id, game=game)
+
+    if request.POST:
+        msg = 'You have deleted the screenshot %s!' % screenshot
+        screenshot.delete()
+
+        messages.warning(request, msg)
+        return HttpResponseRedirect(reverse('games.screenshots',
+                                            args=[game.id]))
+
+    c = {'game': game, 'screenshot': screenshot}
+    return render(request, 'games/screenshot_delete.html', c)
