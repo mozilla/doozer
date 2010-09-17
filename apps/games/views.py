@@ -65,8 +65,9 @@ def delete(request, game_id):
 
 def view(request, game_id, slug=None):
     """View one game. It must be approved or yours."""
+    user = request.user if request.user.is_authenticated() else None
     game = get_object_or_404(Game,
-        Q(is_approved=True) | Q(creator=request.user),
+        Q(is_approved=True) | Q(creator=user),
         id=game_id)
     return render(request, 'games/view.html', {'game': game})
 
