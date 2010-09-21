@@ -14,12 +14,14 @@
     </ul>
   {% endif %}
 
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <h2>Upload a new screenshot.</h2>
-    <ul class="screenshot-form">
-      {{ form.as_ul }}
-    </ul>
-    <input type="submit" value="Upload!">
-  </form>
+  {% if room_for_more %}
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h2>Upload a new screenshot.</h2>
+      <ul class="screenshot-form">
+        {{ form.as_ul }}
+      </ul>
+      <input type="submit" value="Upload!">
+    </form>
+  {% endif %}
 {% endblock %}

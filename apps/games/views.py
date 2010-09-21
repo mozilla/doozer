@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.core.urlresolvers import reverse
@@ -83,12 +84,12 @@ def view_list(request):
 def screenshots(request, game_id):
     """View/edit screenshots for a game."""
     game = get_object_or_404(Game, id=game_id, creator=request.user)
+    room_for_more = game.screenshot_set.count() < settings.SCREENSHOTS_MAX
     form = ScreenshotForm()
 
-    if request.POST:
+    if request.POST and room_for_more:
         form = ScreenshotForm(request.POST, request.FILES)
         if form.is_valid():
-            up_file = request.FILES['file']
             new_screenshot = form.save(commit=False)
             new_screenshot.game = game
             new_screenshot.save()
@@ -97,7 +98,7 @@ def screenshots(request, game_id):
             return HttpResponseRedirect(reverse('games.screenshots',
                                                 args=[game.id]))
 
-    c = {'game': game, 'form': form}
+    c = {'game': game, 'form': form, 'room_for_more': room_for_more}
     return render(request, 'games/screenshots.html', c)
 
 

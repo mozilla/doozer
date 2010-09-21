@@ -126,3 +126,12 @@ LOGIN_REDIRECT_URL = '/'
 
 # Appended to MEDIA_URL for uploads
 IMAGE_UPLOAD_PATH = 'uploads/'
+
+# How many screenshots can one game upload?
+SCREENSHOTS_MAX = 5
+
+# How large (filesize) can screenshots be? (KB)
+SCREENSHOTS_MAX_SIZE = 200
+
+# How large (size) can screenshots be? ('WIDTHxHEIGHT')
+SCREENSHOTS_MAX_DIMENSIONS = '640x480'
