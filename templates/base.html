@@ -7,7 +7,7 @@
     <title>Mozilla Labs Gaming</title>
     <link rel="stylesheet" type="text/css" media="all" href="{{ MEDIA_URL }}css/screen.css">
   </head>
-  <body>
+  <body class="{% block class %}{% endblock %}">
     <div id="page">
       <header class="menu">
           <a class="toplogo" href="http://www.mozillalabs.com/gaming/" target="_blank">
@@ -18,32 +18,7 @@
 
       <div id="content">
         {% block content %}
-          <div id="home-header">
-            <img class="header-left" src="{{ MEDIA_URL }}img/ships-ani.png">
-            <img class="header-right" src="{{ MEDIA_URL }}img/raygun.png">
-            <div class="button"><a href=""><br>ENTER NOW</a></div>
-          </div>
-          <div class="message">
-              <div class="home-title">&lt; game_on &gt;</div>
-              <div class="home-welcome">
-                <p>
-                  Game On 2010 is the first ever international gaming competition
-                  organized by the folks at the Mozilla Labs Gaming project. Game 
-                  On is all about games built, delivered and played on the Open 
-                  Web and the browser. We want to explore the wider set of 
-                  technologies which make immersive gaming on the Open Web 
-                  possible. Whether you’re a student, indie game developer, or
-                  studio, you’re welcome to participate in creating awesome games
-                  for the Open Web. We have tons of fun surprises in store between
-                  now and 1/11/11 when the contest wraps.
-                </p>
 
-                <p>
-                  So, stay in touch on the Mozilla Labs Gaming blog and on Twitter 
-                  for all the details!
-                </p>
-              </div>
-          </div>
         {% endblock %}
       </div>
 

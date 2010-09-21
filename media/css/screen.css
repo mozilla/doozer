@@ -16,6 +16,15 @@ body {
     
 }
 
+@font-face {
+    font-family: "OrbitronMed";
+    src: url("/media/fonts/orbitron-medium.otf") format("opentype");
+}
+@font-face {
+    font-family: "OrbitronBold";
+    src: url("/media/fonts/orbitron-bold.otf") format("opentype");
+}
+
 @font-face{
 font-family: 'Museo'; 
 src: url('/media/fonts/Museo500-Regular.otf') format('opentype');
@@ -34,8 +43,44 @@ src: url('/media/fonts/Matiz.ttf') format('truetype');
 a:link, a:hover, a:active, a:focus, a:visited {color: #fdeb6a;}
 a:hover {color: #fdeb6a; text-decoration: underline;}
 
-h1, h2, h3 {font-family: 'Matiz'; text-transform: uppercase; letter-spacing: -0.2px;}
+h1, h2, h3 {font-family: 'OrbitronMed', Verdana, sans-serif; text-transform: uppercase; letter-spacing: 1px;}
 
+.copy h1 {
+    font-size: 4em;
+    margin-top: 1em;
+}
+.copy h2 {
+    font-size: 2em;
+    margin-top: 2em;
+}
+
+.copy h2 {
+    font-size: 2em;
+    margin-top: 2em;
+    padding-top: 1em;
+}
+
+.copy p {
+    width: 60%;
+    font-size: 1em;
+    line-height: 1.6em;
+}
+
+.copy #content { margin-bottom: 3em; }
+.rules #content {
+    background: #9aa451 url('/media/img/tile.png') repeat top center; /* for non-css3 browsers */
+    background: url('/media/img/sword.png') no-repeat top right, url('/media/img/raygun.png') no-repeat bottom right transparent;
+}
+
+h2:target {
+    color: #FDEB6A;
+}
+h2:target:before {
+    content: "> ";
+}
+h2:target:after {
+    content: " <";
+}
 
 #home-header{
     position: relative;
@@ -93,7 +138,7 @@ body.landing  #home-header{
     right: 95px;
 }
 
-body.sub #page {
+body.copy #page {
     background: url('/media/img/mountains.png') no-repeat 100px 20px;
     -moz-border-radius-bottomleft: 2em;
     -moz-border-radius-bottomright: 2em;
@@ -212,20 +257,6 @@ nav a {color: rgba(255, 255, 255, 1); text-decoration: none;}
 nav a:hover {color: rgba(255, 255, 255, 1); text-decoration: none;}
 
 /* end navigation */
-
-@font-face {
-    font-family: "chunkfive";
-    src: url(Chunkfive.otf) format("opentype");
-}
-
-@font-face {
-    font-family: "OrbitronMed";
-    src: url("/media/fonts/orbitron-medium.otf") format("opentype");
-}
-@font-face {
-    font-family: "OrbitronBold";
-    src: url("/media/fonts/orbitron-bold.otf") format("opentype");
-}
 
 /* BUTTON */
 /* ----------------------------------------- */

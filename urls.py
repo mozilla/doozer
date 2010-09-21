@@ -9,12 +9,12 @@ urlpatterns = patterns('',
     (r'^accounts/', include('registration.urls')),
     (r'^games/', include('games.urls')),
     (r'^admin/', include(admin.site.urls)),
-    url(r'^$', direct_to_template, {'template': 'base.html'}, name='home'),
-    url(r'^how$', direct_to_template, {'template': 'how.html'}, name='how'),
-    url(r'^rules$', direct_to_template, {'template': 'rules.html'}, name='rules'),
-    url(r'^prizes$', direct_to_template, {'template': 'prizes.html'}, name='prizes'),
-    url(r'^judges$', direct_to_template, {'template': 'judges.html'}, name='judges'),
-    url(r'^resources$', direct_to_template, {'template': 'resources.html'}, name='resources'),
+    url(r'^$', direct_to_template, {'template': 'static/home.html'}, name='home'),
+    url(r'^how$', direct_to_template, {'template': 'static/how.html'}, name='how'),
+    url(r'^rules$', direct_to_template, {'template': 'static/rules.html'}, name='rules'),
+    url(r'^prizes$', direct_to_template, {'template': 'static/prizes.html'}, name='prizes'),
+    url(r'^judges$', direct_to_template, {'template': 'static/judges.html'}, name='judges'),
+    url(r'^resources$', direct_to_template, {'template': 'static/resources.html'}, name='resources'),
 )
 
 if settings.DEBUG:
