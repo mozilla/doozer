@@ -101,6 +101,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
     'registration',
+    'flatblocks',
     'games',
     'core',
     'static',

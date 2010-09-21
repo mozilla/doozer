@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load flatblock_tags %}
+
+{% block class %}resources copy{% endblock %}
+
+{% block content %}
+  <h1>Resources</h1>
+
+  {% flatblock "resources" 3600 %}
+{% endblock %}
