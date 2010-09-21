@@ -6,12 +6,12 @@ html {
 }
 
 body { 
-    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Lucida, Arial, Helvetica, sans-serif;
+    font-family: Verdana, sans-serif;
     background: #9aa451 url('/media/img/tile.png') repeat top center; /* for non-css3 browsers */
     background:  -moz-linear-gradient(left, rgba(31,25,2,0.5) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 60%, rgba(31,25,2,0.5) 100%), url('/media/img/paper.png') no-repeat top left, url('/media/img/paper2.png') no-repeat top right, url('/media/img/tile.png') repeat top center;
     padding: 0px; 
     font-size:12px;
-    line-height: 18px;
+    line-height: 1.6em;
     margin: 0 auto;
     
 }
@@ -45,6 +45,9 @@ a:hover {color: #fdeb6a; text-decoration: underline;}
 
 h1, h2, h3 {font-family: 'OrbitronMed', Verdana, sans-serif; text-transform: uppercase; letter-spacing: 1px;}
 
+.copy h1, .copy h2, .copy h3 {
+    text-shadow: 0 1px 2px rgba(0,0,0,.5);
+}
 .copy h1 {
     font-size: 4em;
     margin-top: 1em;
@@ -86,7 +89,6 @@ h2:target:after {
     position: relative;
     overflow: visible;
     background:transparent url('/media/img/lines.png') no-repeat 0px 0px;
-    top: -60px;
     width: 900px;
     height: 600px;
 }
@@ -138,28 +140,41 @@ body.landing  #home-header{
     right: 95px;
 }
 
-body.copy #page {
-    background: url('/media/img/mountains.png') no-repeat 100px 20px;
-    -moz-border-radius-bottomleft: 2em;
-    -moz-border-radius-bottomright: 2em;
-    background-color: rgba(0,0,0,0.1);
-}
+
 
 #page {
     position: relative;
     color: #fff;
-    background: url('/media/img/mountains.png') no-repeat 100px 20px, -moz-radial-gradient(50% 50%, rgba(203,210,96,0.6) 10%, rgba(203,210,96,0.4) 30%,  rgba(203,210,96,0) 60%, rgba(203,210,96,0) 100%);
+    background:
+        url('/media/img/mountains.png') no-repeat 100px 20px,
+        -moz-radial-gradient(50% 50%,
+            rgba(203,210,96,0.6) 10%,
+            rgba(203,210,96,0.4) 30%,
+            rgba(203,210,96,0) 60%,
+            rgba(203,210,96,0) 100%);
+    background:
+        url('/media/img/mountains.png') no-repeat 100px 20px,
+        -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 450,
+            from(rgba(203,210,96,0.6)),
+            to(rgba(203,210,96,0)),
+            color-stop(30%, rgba(203,210,96,0.4)),
+            color-stop(60%, rgba(203,210,96,0)));
     margin: 0px auto;
     overflow: visible;
     max-width: 900px;
     font-size: 12px;
     text-align: left;
     padding: 20px 40px;
-    -moz-border-radius-bottomleft: 2em;
-    -moz-border-radius-bottomright: 2em;
-    background-color: rgba(0,0,0,0.1);
+    -moz-border-radius: 0 0 2em 2em;
+    -webkit-border-radius: 0 0 2em 2em;
+    background-color: rgba(0,0,0,0.2);
     width: 900px;
     margin-bottom: 20px;
+}
+
+body.copy #page {
+    background: url('/media/img/mountains.png') no-repeat 100px 20px;
+    background-color: rgba(0,0,0,0.2);
 }
 
 .message {
@@ -191,8 +206,7 @@ footer {
 /* ----------------------------------------- */
 
 header {
-    font-family: 'Matiz';
-    text-transform: uppercase;
+    font-family: 'Matiz', Verdana, sans-serif;
     z-index: 2;
     max-width: 900px;
     padding: 0;
@@ -205,19 +219,28 @@ header {
     float: left;
 }
 
+#auth {
+    color: #FDEB6A;
+    font-family: Verdana, sans-serif;
+    margin: 1em 8px 0 0;
+    clear: right;
+    float: right;
+    text-shadow: 0 1px 1px rgba(0,0,0,.5);
+}
+
+#auth a {
+    margin: 0 8px;
+}
+#auth a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
 nav {
+    text-transform: uppercase;
     float: right;
     display: inline-block;
     margin-top: 20px;
-}
-
-nav ul {
-    list-style-type: none;
-    display: inline-block;
-}
-
-nav ul li {
-    display: inline;
 }
 
 nav .selected {
@@ -230,19 +253,40 @@ nav .selected {
         inset rgba(255, 255, 255, 0.2) 0 1px 0px,
         inset rgba(255, 255, 255, 0.2) 0 -3px 4px,
         inset rgba(255, 255, 255, 0.2) 0 20px 6px;
+    -webkit-box-shadow: 
+        inset rgba(108, 15, 0, 0.4) 0 -2px 0px,
+        inset rgba(255, 255, 255, 0.2) 0 1px 0px,
+        inset rgba(255, 255, 255, 0.2) 0 -3px 4px,
+        inset rgba(255, 255, 255, 0.2) 0 20px 6px;
     background-color: rgba(230, 32, 0, 0.8);
     padding: 6px 8px 4px 8px;
     margin-right: 8px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.5);
 }
 
-nav a {color: rgba(255, 255, 255, 0.6); text-decoration: none; padding: 4px 8px; margin-right: 8px;}
+nav a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    padding: 4px 8px;
+    margin-right: 8px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.5);
+}
 nav a:hover {
-
     color: rgba(255, 255, 255, 1); 
     text-decoration: none; 
     -moz-border-radius: 0.5em;
     -webkit-border-radius: 0.5em;
-    -moz-box-shadow: 
+    -moz-box-shadow:
+        inset rgba(108, 15, 0, 0.4) 0 -2px 0px,
+        inset rgba(255, 255, 255, 0.2) 0 1px 0px,
+        inset rgba(255, 255, 255, 0.2) 0 -3px 4px,
+        inset rgba(255, 255, 255, 0.2) 0 20px 6px;
+    -webkit-box-shadow:
+        inset rgba(108, 15, 0, 0.4) 0 -2px 0px,
+        inset rgba(255, 255, 255, 0.2) 0 1px 0px,
+        inset rgba(255, 255, 255, 0.2) 0 -3px 4px,
+        inset rgba(255, 255, 255, 0.2) 0 20px 6px;
+    box-shadow:
         inset rgba(108, 15, 0, 0.4) 0 -2px 0px,
         inset rgba(255, 255, 255, 0.2) 0 1px 0px,
         inset rgba(255, 255, 255, 0.2) 0 -3px 4px,

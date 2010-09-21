@@ -14,8 +14,25 @@
             <img src="{{ MEDIA_URL }}img/logo.png" border="0">
           </a>
           {% navigation %}
+          <section id="auth">
+            {% if user.is_authenticated %}
+              signed in as {{ user.username }}
+              <a href="{% url auth_logout %}">logout</a>
+            {% else %}
+              <a class="login" href="{% url auth_login %}">login</a>
+              or
+              <a class="join" href="{% url registration_register %}">register</a>
+            {% endif %}
+          </section>
       </header>
 
+      {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
       <div id="content">
         {% block content %}
 
