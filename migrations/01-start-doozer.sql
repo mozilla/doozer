@@ -19,7 +19,6 @@
 -- Table structure for table `auth_group`
 --
 
-DROP TABLE IF EXISTS `auth_group`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `auth_group` (
@@ -34,7 +33,6 @@ CREATE TABLE `auth_group` (
 -- Table structure for table `auth_group_permissions`
 --
 
-DROP TABLE IF EXISTS `auth_group_permissions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `auth_group_permissions` (
@@ -54,7 +52,6 @@ CREATE TABLE `auth_group_permissions` (
 -- Table structure for table `auth_message`
 --
 
-DROP TABLE IF EXISTS `auth_message`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `auth_message` (
@@ -71,7 +68,6 @@ CREATE TABLE `auth_message` (
 -- Table structure for table `auth_permission`
 --
 
-DROP TABLE IF EXISTS `auth_permission`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `auth_permission` (
@@ -90,7 +86,6 @@ CREATE TABLE `auth_permission` (
 -- Table structure for table `auth_user`
 --
 
-DROP TABLE IF EXISTS `auth_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `auth_user` (
@@ -114,7 +109,6 @@ CREATE TABLE `auth_user` (
 -- Table structure for table `auth_user_groups`
 --
 
-DROP TABLE IF EXISTS `auth_user_groups`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `auth_user_groups` (
@@ -134,7 +128,6 @@ CREATE TABLE `auth_user_groups` (
 -- Table structure for table `auth_user_user_permissions`
 --
 
-DROP TABLE IF EXISTS `auth_user_user_permissions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `auth_user_user_permissions` (
@@ -154,7 +147,6 @@ CREATE TABLE `auth_user_user_permissions` (
 -- Table structure for table `django_content_type`
 --
 
-DROP TABLE IF EXISTS `django_content_type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `django_content_type` (
@@ -171,7 +163,6 @@ CREATE TABLE `django_content_type` (
 -- Table structure for table `django_session`
 --
 
-DROP TABLE IF EXISTS `django_session`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `django_session` (
@@ -186,7 +177,6 @@ CREATE TABLE `django_session` (
 -- Table structure for table `django_site`
 --
 
-DROP TABLE IF EXISTS `django_site`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `django_site` (
