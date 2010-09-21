@@ -23,7 +23,7 @@ def create(request):
             new_game.creator = request.user
             new_game.save()
 
-            messages.info(request, "Your game was successfully saved!")
+            messages.success(request, "Your game was successfully saved!")
             return HttpResponseRedirect(new_game.get_absolute_url())
 
     return render(request, 'games/create.html', {'form': form})
@@ -42,7 +42,7 @@ def edit(request, game_id):
         if form.is_valid():
             form.save()
 
-            messages.info(request, "Your changes were saved!")
+            messages.success(request, "Your changes were saved!")
             return HttpResponseRedirect(game.get_absolute_url())
 
     return render(request, 'games/edit.html', c)
@@ -58,7 +58,7 @@ def delete(request, game_id):
         msg = 'You have deleted the game "%s".' % game.name
         game.delete()
 
-        messages.info(request, msg)
+        messages.success(request, msg)
         return HttpResponseRedirect(reverse('games.view_list'))
 
     return render(request, 'games/delete.html', {'game': game})
@@ -94,7 +94,7 @@ def screenshots(request, game_id):
             new_screenshot.game = game
             new_screenshot.save()
 
-            messages.info(request, "Your screenshot has been uploaded!")
+            messages.success(request, "Your screenshot has been uploaded!")
             return HttpResponseRedirect(reverse('games.screenshots',
                                                 args=[game.id]))
 
@@ -112,7 +112,7 @@ def screenshot_delete(request, game_id, screenshot_id):
         msg = 'You have deleted the screenshot %s!' % screenshot
         screenshot.delete()
 
-        messages.warning(request, msg)
+        messages.success(request, msg)
         return HttpResponseRedirect(reverse('games.screenshots',
                                             args=[game.id]))
 
