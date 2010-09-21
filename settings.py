@@ -103,9 +103,10 @@ INSTALLED_APPS = (
     'registration',
     'games',
     'core',
+    'static',
 )
 
-TEMPATE_CONTEXT_PROCESSORS = (
+TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.debug',
     'django.core.context_processors.i18n',
@@ -113,6 +114,7 @@ TEMPATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.csrf',
     'django.core.context_processors.request',
+    'core.context_processors.nav',
 )
 
 # Account activation period

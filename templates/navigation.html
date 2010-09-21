@@ -1,0 +1,9 @@
+<nav>
+{% for name, path in menu %}
+{% if location == path %}
+  <span class="selected">{{ name }}</span>
+{% else %}
+  <a href="{{ path }}">{{ name }}</a>
+{% endif %}
+{% endfor %}
+</nav>
