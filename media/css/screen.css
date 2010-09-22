@@ -8,12 +8,16 @@ html {
 body { 
     font-family: Verdana, sans-serif;
     background: #9aa451 url('/media/img/tile.png') repeat top center; /* for non-css3 browsers */
-    background:  -moz-linear-gradient(left, rgba(31,25,2,0.5) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 60%, rgba(31,25,2,0.5) 100%), url('/media/img/paper.png') no-repeat top left, url('/media/img/paper2.png') no-repeat top right, url('/media/img/tile.png') repeat top center;
+    background:
+        url('/media/img/paper.png') no-repeat top left,
+        url('/media/img/paper2.png') no-repeat top right,
+        url('/media/img/tile.png') repeat top center;
     padding: 0px; 
     font-size:12px;
     line-height: 1.6em;
     margin: 0 auto;
-    
+    text-shadow: 0 0 2px rgba(0,0,0,.5);
+    text-rendering: optimizeLegibility;
 }
 
 @font-face {
@@ -72,7 +76,7 @@ h1, h2, h3 {font-family: 'OrbitronMed', Verdana, sans-serif; text-transform: upp
 .copy #content { margin-bottom: 3em; }
 .rules #content {
     background: #9aa451 url('/media/img/tile.png') repeat top center; /* for non-css3 browsers */
-    background: url('/media/img/sword.png') no-repeat top right, url('/media/img/raygun.png') no-repeat bottom right transparent;
+    background: url('/media/img/sword.png') no-repeat right 240px, url('/media/img/raygun.png') no-repeat bottom right transparent;
 }
 
 h2:target {
@@ -85,28 +89,36 @@ h2:target:after {
     content: " <";
 }
 
+nav.toc {
+    float: right;
+    text-align: right;
+    background: rgba(0,0,0,.2);
+    padding: 2em;
+    -webkit-border-radius: 1em;
+       -moz-border-radius: 1em;
+            border-radius: 1em;
+}
+
+nav.toc a {
+    display: block;
+}
+
 #home-header{
     position: relative;
     overflow: visible;
     background:transparent url('/media/img/lines.png') no-repeat 0px 0px;
-    width: 900px;
     height: 600px;
-}
-
-body.landing  #home-header{
-    position: relative;
-    overflow: visible;
-    background:transparent url('/media/img/lines-center.png') no-repeat 0px 0px;
-    width: 900px;
-    height: 600px;
+    top: -20px;
 }
 
 .home-title {
-    font-family: 'OrbitronMed';
-    text-transform: uppercase;
-    font-size:64px;
-    text-align: left;
     color: white;
+    font-family: 'OrbitronMed';
+    font-size:64px;
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0,0,0,.5);
+    text-align: left;
+    margin-top: 0;
 }
 
 .home-welcome{
@@ -114,24 +126,15 @@ body.landing  #home-header{
     max-width: 440px;
     text-align: left;
     color: white;
+    font-size: 1.3em;
+    line-height: 1.6em;
+    text-shadow: 0 0 2px rgba(0,0,0,.6);
 }
 
 .header-left {
     position: absolute;
     bottom:35px;
     left: 460px;
-}
-
-.sub-header-right {
-    position: absolute;
-    top: 75px;
-    right: -10px;
-}
-
-.sub-footer-right {
-    position: absolute;
-    bottom: 35px;
-    right:135px;
 }
 
 .header-right {
@@ -145,6 +148,19 @@ body.landing  #home-header{
 #page {
     position: relative;
     color: #fff;
+    margin: 0px auto;
+    overflow: visible;
+    max-width: 900px;
+    font-size: 12px;
+    text-align: left;
+    padding: 20px 40px;
+    -moz-border-radius: 0 0 2em 2em;
+    -webkit-border-radius: 0 0 2em 2em;
+    width: 900px;
+    margin-bottom: 20px;
+}
+
+body.home #page {
     background:
         url('/media/img/mountains.png') no-repeat 100px 20px,
         -moz-radial-gradient(50% 50%,
@@ -154,22 +170,12 @@ body.landing  #home-header{
             rgba(203,210,96,0) 100%);
     background:
         url('/media/img/mountains.png') no-repeat 100px 20px,
-        -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 450,
+        -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 900,
             from(rgba(203,210,96,0.6)),
             to(rgba(203,210,96,0)),
             color-stop(30%, rgba(203,210,96,0.4)),
             color-stop(60%, rgba(203,210,96,0)));
-    margin: 0px auto;
-    overflow: visible;
-    max-width: 900px;
-    font-size: 12px;
-    text-align: left;
-    padding: 20px 40px;
-    -moz-border-radius: 0 0 2em 2em;
-    -webkit-border-radius: 0 0 2em 2em;
     background-color: rgba(0,0,0,0.2);
-    width: 900px;
-    margin-bottom: 20px;
 }
 
 body.copy #page {
@@ -221,6 +227,7 @@ header {
 
 #auth {
     color: #FDEB6A;
+    font-weight: bold;
     font-family: Verdana, sans-serif;
     margin: 1em 8px 0 0;
     clear: right;
@@ -236,14 +243,14 @@ header {
     text-decoration: underline;
 }
 
-nav {
+header nav {
     text-transform: uppercase;
     float: right;
     display: inline-block;
     margin-top: 20px;
 }
 
-nav .selected {
+header nav .selected {
     margin-bottom: 40px;
     font-size: 13px;
     -moz-border-radius: 0.5em;
@@ -264,14 +271,14 @@ nav .selected {
     text-shadow: 0 1px 1px rgba(0,0,0,.5);
 }
 
-nav a {
+header nav a {
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     padding: 4px 8px;
     margin-right: 8px;
     text-shadow: 0 1px 1px rgba(0,0,0,.5);
 }
-nav a:hover {
+header nav a:hover {
     color: rgba(255, 255, 255, 1); 
     text-decoration: none; 
     -moz-border-radius: 0.5em;

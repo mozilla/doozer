@@ -13,7 +13,7 @@ urlpatterns = patterns('',
     url(r'^how$', direct_to_template, {'template': 'static/how.html'}, name='how'),
     url(r'^rules$', direct_to_template, {'template': 'static/rules.html'}, name='rules'),
     url(r'^prizes$', direct_to_template, {'template': 'static/prizes.html'}, name='prizes'),
-    url(r'^judges$', direct_to_template, {'template': 'static/judges.html'}, name='judges'),
+    url(r'^judging$', direct_to_template, {'template': 'static/judging.html'}, name='judging'),
     url(r'^resources$', direct_to_template, {'template': 'static/resources.html'}, name='resources'),
 )
 

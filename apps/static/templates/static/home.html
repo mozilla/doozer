@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block class %}home{% endblock %}
+
 {% block content %}
   <div id="home-header">
     <img class="header-left" src="{{ MEDIA_URL }}img/ships-ani.png">
@@ -7,7 +9,7 @@
     <div class="button"><a href=""><br>ENTER NOW</a></div>
   </div>
   <div class="message">
-      <div class="home-title">&lt; game_on &gt;</div>
+      <h1 class="home-title">&lt; game_on &gt;</h1>
       <div class="home-welcome">
         <p>
           Game On 2010 is the first ever international gaming competition

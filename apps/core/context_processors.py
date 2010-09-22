@@ -6,7 +6,7 @@ def nav(request):
             ('Competition Home', 'home'),
             ('How It Works', 'how'),
             ('Rules', 'rules'),
-            ('Judging', 'judges'),
+            ('Judging', 'judging'),
             ('Prizes', 'prizes'),
             ('Resources', 'resources'),
         ],
