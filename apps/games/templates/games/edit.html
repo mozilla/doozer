@@ -1,9 +1,7 @@
 {% extends "games/base.html" %}
 
 {% block content %}
-  {% if success %}
-    <div class="success">Your changes have been saved!</div>
-  {% endif %}
+  <h1>Details</h1>
   {% if form.errors %}
     <ul class="errorlist">
       <li>Please fix the errors and submit again.</li>
@@ -14,6 +12,9 @@
     <ul>
       {{ form.as_ul }}
     </ul>
-    <input type="submit"/>
+    <input type="submit" value="Edit game" />
   </form>
+
+  <h2>Screenshots</h2>
+  <p><a href="{% url games.screenshots game.id %}">Edit screenshots</a></p>
 {% endblock %}

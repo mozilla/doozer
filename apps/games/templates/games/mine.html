@@ -8,7 +8,7 @@
       <h1>{{ game.name }}</h1>
       <p class="edit"><a href="{% url games.edit game.id %}">edit</a></p>
       <p>{{ game.description }}</p>
-      <ul>
+      <ul class="links">
         <li><a href="{{ game.url }}">Play</a></li>
         {% if game.source %}
           <li><a href="{{ game.source }}">See the source</a></li>
