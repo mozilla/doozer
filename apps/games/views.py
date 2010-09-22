@@ -81,6 +81,13 @@ def view_list(request):
 
 
 @login_required
+def mine(request):
+    """View your own games."""
+    games = request.user.game_set.all()
+    return render(request, 'games/mine.html', {'games': games})
+
+
+@login_required
 def screenshots(request, game_id):
     """View/edit screenshots for a game."""
     game = get_object_or_404(Game, id=game_id, creator=request.user)

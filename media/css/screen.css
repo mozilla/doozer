@@ -243,6 +243,25 @@ header {
     text-decoration: underline;
 }
 
+#messages {
+    background: none;
+    color: #444;
+    font-weight: bold;
+    list-style-type: none;
+    margin: 1em;
+    padding: 0;
+}
+
+#messages li {
+    background-color: #FFF997;
+    margin: 0;
+    padding: .3em 1em;
+}
+
+#messages li.success {
+    background-color: #67ED87;
+}
+
 header nav {
     text-transform: uppercase;
     float: right;

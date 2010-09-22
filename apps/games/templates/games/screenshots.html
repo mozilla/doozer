@@ -1,9 +1,9 @@
-{% extends "base.html" %}
+{% extends "games/base.html" %}
 
 {% block content %}
-  <h1>Screenshots for {{ game.name }}</h1>
+  <h1>Screenshots for <a href="{{ game.get_absolute_url }}">{{ game.name }}</a></h1>
   {% if game.screenshot_set.all %}
-    <ul>
+    <ul class="screenshots">
     {% for screenshot in game.screenshot_set.all %}
       <li>
         <img src="{{ screenshot.get_absolute_url }}"/>

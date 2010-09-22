@@ -1,11 +1,12 @@
 {% load tags %}
+{% load bundler_tags %}
 <!-- You are in a twisting series of little tubes, all alike. -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Mozilla Labs Gaming</title>
-    <link rel="stylesheet" type="text/css" media="all" href="{{ MEDIA_URL }}css/screen.css">
+    {% load_bundle "styles-min" %}
     <script defer src="{{ MEDIA_URL }}js/libs/jquery.min.js"></script>
     <script defer src="{{ MEDIA_URL }}js/global.js"></script>
   </head>
@@ -18,7 +19,7 @@
           {% navigation %}
           <section id="auth">
             {% if user.is_authenticated %}
-              signed in as {{ user.username }}
+              signed in as <a href="{% url games.mine %}">{{ user.username }}</a>
               <a href="{% url auth_logout %}">logout</a>
             {% else %}
               <a class="login" href="{% url auth_login %}">login</a>
@@ -29,7 +30,7 @@
       </header>
 
       {% if messages %}
-        <ul class="messages">
+        <ul id="messages">
           {% for message in messages %}
             <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
           {% endfor %}
@@ -48,6 +49,8 @@
         <a href="http://www.mozilla.com/en-US/about/legal.html">Legal Notices</a>
       </footer>
     </div>
+    {% load_bundle "scripts-min" %}
+    {% deferred_content %}
   </body>
 </html>
 

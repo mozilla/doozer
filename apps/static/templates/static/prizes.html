@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load flatblock_tags %}
+
+{% block class %}prizes copy{% endblock %}
+
+{% block content %}
+  <h1>Prizes</h1>
+
+  {% flatblock "prizes" 3600 %}
+{% endblock %}
