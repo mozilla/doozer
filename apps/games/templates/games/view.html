@@ -1,15 +1,33 @@
-{% extends "base.html" %}
+{% extends "games/base.html" %}
 
 {% block content %}
   <article class="game">
     <h1>{{ game.name }}</h1>
-    <p>{{ game.description }}</h1>
+    {% if game.creator == request.user %}
+      <p class="edit"><a href="{% url games.edit game.id %}">edit</a></p>
+    {% endif %}
+
+    <ul class="links">
+      <li><a href="{{ game.url }}">Play</a></li>
+      {% if game.source %}
+        <li><a href="{{ game.source }}">See the source</a></li>
+      {% endif %}
+    </ul>
+
+    <h2>Description</h2>
+    <p>{{ game.description }}</p>
+
+    {% if game.resources %}
+      <h2>Resources Used</h2>
+      <p>{{ game.resources }}</p>
+    {% endif %}
 
     {% if game.screenshot_set.all %}
+      <h2>Screenshots</h2>
       <ul class="screenshots">
       {% for screenshot in game.screenshot_set.all %}
         <li id="screenshot-{{ screenshot.id }}">
-          <img src="{{ screenshot.get_absolute_url }}">
+          <img src="{{ screenshot.get_absolute_url }}" height="{{ screenshot.file.height }}" width="{{ screenshot.file.width }}">
         </li>
       {% endfor %}
       </ul>
