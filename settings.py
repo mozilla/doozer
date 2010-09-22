@@ -1,6 +1,7 @@
 # Django settings for doozer project.
 import logging
 import os
+import platform
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -68,6 +69,8 @@ ADMIN_MEDIA_PREFIX = '/admin-media/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'u@skyx92h36_2vxxnd2grj%^ecofco^oj3@(14co92dq81lsq#'
+
+PLATFORM_NAME = platform.node()
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
