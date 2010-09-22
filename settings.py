@@ -159,6 +159,7 @@ MEDIA_BUNDLES = (
         'files': (
             'libs/jquery.min.js',
             'screen.js',
+            'particle.js',
         ),
     },
 )

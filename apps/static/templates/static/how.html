@@ -1,10 +1,8 @@
 {% extends "base.html" %}
+{% load flatblock_tags %}
 
 {% block class %}copy{% endblock %}
 
 {% block content %}
-
-<h1>How It Works</h1>
-  
-
+{% flatblock "howitworks" 3600 %}
 {% endblock %}

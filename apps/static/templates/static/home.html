@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load flatblock_tags %}
 
 {% block class %}home{% endblock %}
 
@@ -10,23 +11,6 @@
   </div>
   <div class="message">
       <h1 class="home-title">&lt; game_on &gt;</h1>
-      <div class="home-welcome">
-        <p>
-          Game On 2010 is the first ever international gaming competition
-          organized by the folks at the Mozilla Labs Gaming project. Game 
-          On is all about games built, delivered and played on the Open 
-          Web and the browser. We want to explore the wider set of 
-          technologies which make immersive gaming on the Open Web 
-          possible. Whether you’re a student, indie game developer, or
-          studio, you’re welcome to participate in creating awesome games
-          for the Open Web. We have tons of fun surprises in store between
-          now and 1/11/11 when the contest wraps.
-        </p>
-
-        <p>
-          So, stay in touch on the Mozilla Labs Gaming blog and on Twitter 
-          for all the details!
-        </p>
-      </div>
+      {% flatblock "home" 3600 %}
   </div>
 {% endblock %}
