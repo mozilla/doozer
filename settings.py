@@ -102,6 +102,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'registration',
     'flatblocks',
+    'media_bundler',
     'games',
     'core',
     'static',
@@ -135,3 +136,29 @@ SCREENSHOTS_MAX_SIZE = 200
 
 # How large (size) can screenshots be? ('WIDTHxHEIGHT')
 SCREENSHOTS_MAX_DIMENSIONS = '640x480'
+
+MEDIA_BUNDLES = (
+    {
+        'type': 'css',
+        'name': 'styles-min',
+        'path': MEDIA_ROOT + '/css/',
+        'url': MEDIA_URL + 'css/',
+        'minify': False,
+        'files': (
+            'reset.css',
+            'screen.css',
+            'games.css',
+        ),
+    },
+    {
+        'type': 'javascript',
+        'name': 'scripts-min',
+        'path': MEDIA_ROOT + '/js/',
+        'url': MEDIA_URL + 'js/',
+        'minify': True,
+        'files': (
+            'libs/jquery.min.js',
+            'screen.js',
+        ),
+    },
+)
