@@ -12,3 +12,4 @@ build.py
 **-min.js
 .DS_Store
 media/uploads
+vendor
