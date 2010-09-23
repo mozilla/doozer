@@ -1,7 +1,7 @@
 {% extends "games/base.html" %}
 
 {% block content %}
-  <h1>Details</h1>
+  <h1>Submit a Game</h1>
   {% if form.errors %}
     <ul class="errorlist">
       <li>Please fix the errors and submit again.</li>
@@ -12,6 +12,6 @@
     <ul>
       {{ form.as_ul }}
     </ul>
-    <input type="submit" value="Add game" />
+    <input type="submit" value="Submit your game" />
   </form>
 {% endblock %}

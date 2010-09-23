@@ -132,7 +132,7 @@ IMAGE_UPLOAD_PATH = 'uploads/'
 SCREENSHOTS_MAX = 5
 
 # How large (filesize) can screenshots be? (KB)
-SCREENSHOTS_MAX_SIZE = 200
+SCREENSHOTS_MAX_SIZE = 600
 
 # How large (size) can screenshots be? ('WIDTHxHEIGHT')
 SCREENSHOTS_MAX_DIMENSIONS = '640x480'
@@ -148,6 +148,7 @@ MEDIA_BUNDLES = (
             'reset.css',
             'screen.css',
             'games.css',
+            'forms.css',
         ),
     },
     {
@@ -158,8 +159,9 @@ MEDIA_BUNDLES = (
         'minify': True,
         'files': (
             'libs/jquery.min.js',
-            'screen.js',
             'particle.js',
+            'screen.js',
+            'global.js',
         ),
     },
 )

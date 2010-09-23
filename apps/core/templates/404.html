@@ -1,6 +1,13 @@
 {# vim: set ts=2 et sts=2 sw=2: #}
 {% extends "base.html" %}
 
+{% block class %}errorpage{% endblock %}
+
 {% block content %}
-  <h1>404 Not Found</h1>
+  <h1>404</h1>
+  <h2>That page was eaten by a grue.</h2>
+  <h3>
+    <a href="javascript:window.history.back()">&laquo;try again</a>
+    &nbsp;&nbsp;<a href='/'>go home &raquo;</a>
+  </h3>
 {% endblock %}

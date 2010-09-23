@@ -1,20 +1,23 @@
 {% extends "games/base.html" %}
 
 {% block content %}
-  <article>
   <h1>My Games</h1>
+  <article class="tile-list">
   {% for game in games %}
     <section class="game" id="game-{{ game.id }}">
-      <h1>{{ game.name }}</h1>
-      <p class="edit"><a href="{% url games.edit game.id %}">edit</a></p>
-      <p>{{ game.description }}</p>
+      <h2><a href="{{ game.get_absolute_url }}">{{ game.name }}</a></h2>
+      <p>{{ game.description|truncatewords_html:40 }}</p>
       <ul class="links">
+        <li><a href="{% url games.edit game.id %}">Edit</a></li>
         <li><a href="{{ game.url }}">Play</a></li>
         {% if game.source %}
           <li><a href="{{ game.source }}">See the source</a></li>
         {% endif %}
       </ul>
     </section>
+  {% empty %}
+    <h2>You haven't submitted any games yet.</h2>
   {% endfor %}
   </article>
+  <h3><a href='{% url games.create %}'>Submit a new game</a></h3>
 {% endblock %}

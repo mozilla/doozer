@@ -28,23 +28,24 @@ $(document).ready(function () {
 
 // initializes a particle effect on the raygun, if supported.
 $(document).ready(function() {
-    if (!!document.createElement('canvas').getContext &&
-        $('body').hasClass('home')) { //checks for canvas capability
+    if (!!document.createElement('canvas').getContext && //checks for canvas capability
+        $('body').hasClass('home')) { //we're on the homepage
             
         var $c = $('<canvas></canvas>');
-        var raygun = $('.header-right').position();
-        $('#content').append($c);
+        var raygun = $('.header-right').offset();
+        $(document.body).append($c);
         var smoke = {
           respawn: true,
-          initNum: 5,
-          origin: [raygun.left+12,raygun.top+59],
+          initNum: 1,
+          num: 100,
+          origin: [raygun.left+13,raygun.top+80],
           canvas: $c[0],
           particle: {
             life: [2000,3000],
             init: function() {
               var r = rand([0,2*PI]),
                   m = rand([5,30]);
-              this.vars.goal = vsafe([m*.5*Math.cos(r), m*Math.sin(r)-100]);
+              this.vars.goal = vsafe([m*.5*Math.cos(r), m*Math.sin(r)-90]);
               this.rad = 10;
             },
             tick: function(age) {
@@ -52,7 +53,7 @@ $(document).ready(function() {
               this.rad = this.age*8+2;
             },
             draw: function(ctx) {
-              ctx.fillStyle = "rgba(160,160,160,"+Math.max((.9-this.age)/5,0)+")";
+              ctx.fillStyle = "rgba(160,160,160,"+Math.max((1-this.age)/4,0)+")";
               var r = this.rad;
               ctx.fillRect(-r, -r, r*2, r*2);
             }
@@ -60,5 +61,9 @@ $(document).ready(function() {
         };
         p = new ParticleEffect(smoke);
         p.go();
+        $(window).resize(function() {
+            var raygun = $('.header-right').offset();
+            p.origin = [raygun.left+13,raygun.top+80];
+        })
     }
 });

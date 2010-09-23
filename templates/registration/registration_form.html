@@ -10,9 +10,9 @@
   {% endif %}
   <form method="POST" class="standard" action="">
     {% csrf_token %}
-    <ol>
+    <ul>
       {{ form.as_ul }}
-    </ol>
+    </ul>
     <input type="submit" class="btn post" value="Register" />	
   </form>
 {% endblock %}

@@ -1,13 +1,13 @@
 {% extends "games/base.html" %}
 
 {% block content %}
+  <h1>{{ game.name }}</h1>
   <article class="game">
-    <h1>{{ game.name }}</h1>
-    {% if game.creator == request.user %}
-      <p class="edit"><a href="{% url games.edit game.id %}">edit</a></p>
-    {% endif %}
 
     <ul class="links">
+      {% if game.creator == request.user %}
+        <li><a href="{% url games.edit game.id %}">Edit</a></li>
+      {% endif %}
       <li><a href="{{ game.url }}">Play</a></li>
       {% if game.source %}
         <li><a href="{{ game.source }}">See the source</a></li>

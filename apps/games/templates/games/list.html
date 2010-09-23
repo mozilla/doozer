@@ -1,12 +1,12 @@
 {% extends "games/base.html" %}
 
 {% block content %}
-  <article>
   <h1>Games</h1>
+  <article class="tile-list">
   {% for game in games %}
     <section class="game" id="game-{{ game.id }}">
-      <h1><a href="{{ game.get_absolute_url }}">{{ game.name }}</a></h1>
-      <p>{{ game.description }}</p>
+      <h2><a href="{{ game.get_absolute_url }}">{{ game.name }}</a></h2>
+      <p>{{ game.description|truncatewords_html:40 }}</p>
       <ul class="links">
         <li><a href="{{ game.url }}">Play</a></li>
         {% if game.source %}
