@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 
+{% block class %}form{% endblock %}
+
 {% block content %}
   <h1>Register</h1>
-  <p>Fill in the information below to get started!</p>
+  <p>You'll need to register so you can sign in later to modify your submissions and so we know how to reach you if you win!</p>
+  <p>Already registered? <a href="{% url auth_login %}">Login here!</a></p>
+  <p>Fill in the information below to get started:</p>
   {% if form.errors %}
     <ul class="errorlist">
       <li>Please fix the errors and submit again.</li>

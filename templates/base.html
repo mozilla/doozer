@@ -17,8 +17,9 @@
           {% navigation %}
           <section id="auth">
             {% if user.is_authenticated %}
-              signed in as <a href="{% url games.mine %}">{{ user.username }}</a>
-              <a href="{% url auth_logout %}">logout</a>
+              signed in as {{ user.username }} |
+              <a href="{% url games.mine %}">your games</a>|
+              <a href="{% url auth_logout %}?next=/">logout</a>
             {% else %}
               <a class="login" href="{% url auth_login %}">login</a>
               or

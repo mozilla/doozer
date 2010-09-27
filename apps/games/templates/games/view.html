@@ -2,7 +2,7 @@
 
 {% block content %}
   <h1>{{ game.name }}</h1>
-  <article class="game">
+  <article class="game single">
 
     <ul class="links">
       {% if game.creator == request.user %}
@@ -15,11 +15,11 @@
     </ul>
 
     <h2>Description</h2>
-    <p>{{ game.description }}</p>
+    <p>{{ game.description|linebreaks }}</p>
 
     {% if game.resources %}
       <h2>Resources Used</h2>
-      <p>{{ game.resources }}</p>
+      <p>{{ game.resources|linebreaks }}</p>
     {% endif %}
 
     {% if game.screenshot_set.all %}

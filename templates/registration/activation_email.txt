@@ -1,7 +1,7 @@
-Welcome to Mozilla Games(TODO?!)!
+Welcome to the Mozilla Labs Game On! 2010 Open Web Games Contest!
 
-We hope that you will enjoy the site, but first you will need to activate your 
-account with us.  To do so, please navigate to the link below or paste it in
-your browser:
+We're excited to have you in the competition, but first we need you to confirm your e-mail address. Once you do so, you will be able to submit games and login later to modify your submissions.
+
+To complete registration, please navigate to the link below or paste it in your browser:
     
     https://{{ site.domain }}/accounts/activate/{{ activation_key }}/

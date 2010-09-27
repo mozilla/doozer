@@ -67,3 +67,7 @@ body.games ul.screenshots li {
 body.games a.screenshot-delete {
     display: block;
 }
+
+.games .game.single p {
+    width: 60%;
+}

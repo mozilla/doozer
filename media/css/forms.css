@@ -15,6 +15,7 @@ form label {
     font-weight: bold;
     width: 200px;
     margin-right: 8px;
+    vertical-align: top;
 }
 form input[type=submit] {
     margin-left: 208px;
@@ -25,7 +26,7 @@ ul.errorlist + label:before {
     background: #f42;
     width: 16px;
     height: 16px;
-    line-height: 13px;
+    line-height: 14px;
     vertical-align: bottom;
     text-align: center;
     text-shadow: 0px 1px 4px #000;

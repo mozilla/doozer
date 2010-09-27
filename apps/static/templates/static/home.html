@@ -4,12 +4,12 @@
 {% block class %}home{% endblock %}
 
 {% block content %}
-  <div id="home-header">
-    <div class="button"><a href=""><br>ENTER NOW</a></div>
-  </div>
-  <div class="message">
-      <h1 class="home-title">&lt;&#x200a;GAME_ON&#x200a;&gt;</h1>
+  <h1 class="home-title">&lt;&#x200a;GAME_ON&#x200a;&gt;</h1>
+  <div class="home-message">
       {% flatblock "home" 3600 %}
+  </div>
+  <div class="button">
+    <a href="{% url games.create %}"><br>ENTER NOW</a>
   </div>
   <img class="header-left" src="{{ MEDIA_URL }}img/ships-ani.png">
   <img class="header-right" src="{{ MEDIA_URL }}img/raygun.png">

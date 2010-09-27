@@ -61,9 +61,13 @@ $(document).ready(function() {
         };
         p = new ParticleEffect(smoke);
         p.go();
-        $(window).resize(function() {
+
+        function positionSmoke() {
             var raygun = $('.header-right').offset();
             p.origin = [raygun.left+13,raygun.top+80];
-        })
+        }
+
+        $(window).resize(positionSmoke);
+        setTimeout(positionSmoke, 100);
     }
 });

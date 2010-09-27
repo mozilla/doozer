@@ -4,7 +4,7 @@
 <h1>user activation</h1>
 {% if account %}
   <p class="success">You have successfully activated!</p>
-  <p>Now that you have activated, you may go ahead and <a href="{% url auth_login %}">login</a> now.</p>
+  <h3><a href="{% url games.create %}">Login and submit a game!</a></p>
 {% else %}
   <p class="failure">We could not activate your account. Please make sure that you have clicked the correct link in your e-mail or typed in the correct address.</p>
 {% endif %}

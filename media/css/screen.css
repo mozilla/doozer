@@ -67,7 +67,8 @@ h1, h2, h3 {font-family: 'OrbitronMed', Verdana, sans-serif; text-transform: upp
     padding-top: 1em;
 }
 
-.copy p {
+.copy p,
+.form p {
     width: 60%;
     font-size: 1em;
     line-height: 1.6em;
@@ -103,14 +104,12 @@ nav.toc a {
     display: block;
 }
 
-#home-header{
-    position: relative;
-    overflow: visible;
-    background:transparent url('/media/img/lines.png') no-repeat 0px 0px;
-    height: 600px;
-    top: -20px;
+.home #content {
+    background:transparent url('/media/img/lines.png') no-repeat 330px top;
+    padding-top: 1em;
+    top: -1em;
+    height: 575px;
 }
-
 .home-title {
     color: white;
     font-family: Karnivore, Verdana, sans-serif;
@@ -118,10 +117,9 @@ nav.toc a {
     text-transform: uppercase;
     text-shadow: 0 1px 2px rgba(0,0,0,.5);
     text-align: left;
-    margin-top: 0;
 }
 
-.home-welcome{
+.home-welcome {
     margin-top: 65px;
     max-width: 440px;
     text-align: left;
@@ -133,17 +131,15 @@ nav.toc a {
 
 .header-left {
     position: absolute;
-    bottom:35px;
-    left: 460px;
+    bottom: 0;
+    left: 430px;
 }
 
 .header-right {
     position: absolute;
-    bottom: -75px;
-    right: 95px;
+    bottom: -45px;
+    right: 65px;
 }
-
-
 
 #page {
     position: relative;
@@ -178,13 +174,6 @@ body.home #page {
             color-stop(30%, rgba(203,210,96,0.4)),
             color-stop(60%, rgba(203,210,96,0)));
     background-color: rgba(0,0,0,0.2);
-}
-
-.message {
-    position: absolute;
-    top: 100px;
-    max-width: 600px;
-    text-align: center;
 }
 
 .logo {
@@ -334,8 +323,8 @@ nav a:hover {color: rgba(255, 255, 255, 1); text-decoration: none;}
     width: 200px;
     height: 200px;
     margin: 80px auto;
-    top: 275px;
-    right: -45px;
+    top: 175px;
+    right: -50px;
     text-align: center;
 }
 
@@ -467,6 +456,7 @@ body.errorpage h3 {
 /* Clearfix */
 header:after,
 article:after,
+#content:after,
 .game:after {
     content: ".";
     display: block;

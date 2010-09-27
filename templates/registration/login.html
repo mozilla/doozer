@@ -2,6 +2,7 @@
 
 {% block content %}
 	<h1>Login</h1>
+	<h3>Don't have an account yet? <a href="{% url registration_register %}">Register!</a></h3>
 	<form method="post" action="">
 	  {% csrf_token %}
 	  <ul>
