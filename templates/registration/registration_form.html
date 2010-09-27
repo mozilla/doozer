@@ -3,9 +3,9 @@
 {% block class %}form{% endblock %}
 
 {% block content %}
+  {% include "registration/account_note.html" %}
   <h1>Register</h1>
-  <p>You'll need to register so you can sign in later to modify your submissions and so we know how to reach you if you win!</p>
-  <p>Already registered? <a href="{% url auth_login %}">Login here!</a></p>
+  <h3>Already registered? <a href="{% url auth_login %}">Login here!</a></h3>
   <p>Fill in the information below to get started:</p>
   {% if form.errors %}
     <ul class="errorlist">

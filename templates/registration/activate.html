@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 
+{% block class %}form{% endblock %}
+
 {% block content %}
-<h1>user activation</h1>
 {% if account %}
-  <p class="success">You have successfully activated!</p>
+  <h1>Email confirmed!</h1>
   <h3><a href="{% url games.create %}">Login and submit a game!</a></p>
 {% else %}
+  <h1>Something is wrong.</h1>
   <p class="failure">We could not activate your account. Please make sure that you have clicked the correct link in your e-mail or typed in the correct address.</p>
 {% endif %}
 {% endblock %}

@@ -67,9 +67,8 @@ h1, h2, h3 {font-family: 'OrbitronMed', Verdana, sans-serif; text-transform: upp
     padding-top: 1em;
 }
 
-.copy p,
-.form p {
-    width: 60%;
+p {
+    width: 500px;
     font-size: 1em;
     line-height: 1.6em;
 }
@@ -90,9 +89,11 @@ h2:target:after {
     content: " <";
 }
 
-nav.toc {
+nav.toc,
+aside {
+    max-width: 300px;
+    display: block;
     float: right;
-    text-align: right;
     background: rgba(0,0,0,.2);
     padding: 2em;
     -webkit-border-radius: 1em;
@@ -102,6 +103,7 @@ nav.toc {
 
 nav.toc a {
     display: block;
+    text-align: right;
 }
 
 .home #content {
@@ -127,6 +129,10 @@ nav.toc a {
     font-size: 1.3em;
     line-height: 1.6em;
     text-shadow: 0 0 2px rgba(0,0,0,.6);
+}
+
+.home-welcome p {
+    max-width: 440px;
 }
 
 .header-left {
@@ -255,7 +261,7 @@ header nav {
     margin-top: 20px;
 }
 
-header nav .selected {
+header nav .selected, input[type=submit] {
     margin-bottom: 40px;
     font-size: 13px;
     -moz-border-radius: 0.5em;
