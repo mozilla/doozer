@@ -49,6 +49,11 @@ a:hover {color: #fdeb6a; text-decoration: underline;}
 
 h1, h2, h3 {font-family: 'OrbitronMed', Verdana, sans-serif; text-transform: uppercase; letter-spacing: 1px;}
 
+h1 {
+    font-size: 3em;
+    margin-bottom: 1em;
+}
+
 .copy h1, .copy h2, .copy h3 {
     text-shadow: 0 1px 2px rgba(0,0,0,.5);
 }
@@ -91,11 +96,12 @@ h2:target:after {
 
 nav.toc,
 aside {
-    max-width: 300px;
     display: block;
+    min-width: 200px;
+    max-width: 300px;
     float: right;
     background: rgba(0,0,0,.2);
-    padding: 2em;
+    padding: 1.5em;
     -webkit-border-radius: 1em;
        -moz-border-radius: 1em;
             border-radius: 1em;
@@ -383,67 +389,7 @@ nav a:hover {color: rgba(255, 255, 255, 1); text-decoration: none;}
     position: relative;
 }
 
-/* SUBPAGES */
-/* ----------------------------------------- */
-
-.subTitle {
-    font-family: 'Matiz';
-    text-transform: uppercase;
-    letter-spacing: -3px;
-    font-size: 52px;
-    margin: 80px 0 40px 0;
-    margin-top: 80px;
-}
-
-.subLeft {
-    float: left;
-    margin-right: 20px;
-}
-
-.subLeftTitle {
-    float: left;
-    font-family: 'Matiz';
-    font-size: 42px;
-    color: rgba(0, 0, 0, 0.8);
-    width: 620px;
-    height: 80px;
-    margin: 20px 0px;
-    margin-top: 30px;
-}
-
-.subName {
-    float: left;
-    font-family: 'Matiz';
-    text-transform: uppercase;
-    font-size: 36px;
-    width: 500px;
-    margin: 20px 0px;
-    margin-top: 30px;
-}
-
-.subNameSub {
-    float: left;
-    font-family: 'Matiz';
-    text-transform: uppercase;
-    font-size: 18px;
-    width: 500px;
-    margin: 20px 0px;
-    margin-top: 0px;
-}
-
-.subLeftCopy {
-    float: left;
-    width: 500px;
-    margin: 20px 0px;
-    
-}
-
-.subCopy {
-    margin: 20px auto;
-
-}
-
-.judge { }
+.judge {}
 
 .prize {}
 
