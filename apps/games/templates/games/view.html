@@ -3,7 +3,6 @@
 {% block content %}
   <h1>{{ game.name }}</h1>
   <article class="game single">
-    {% if game.screenshot_set.all %}
     <section class="screenshots">
       <h2>Screenshots</h2>
       <ul class="screenshots">
@@ -11,10 +10,14 @@
         <li id="screenshot-{{ screenshot.id }}">
           <img src="{{ screenshot.get_absolute_url }}" height="{{ screenshot.file.height }}" width="{{ screenshot.file.width }}">
         </li>
+      {% empty %}
+        <li>No Screenshots Available</li>
+        {% if game.creator == request.user %}
+          <h3><a href="{% url games.edit game.id %}">Add Screenshots</a></h3>
+        {% endif %}
       {% endfor %}
       </ul>
     </section>
-    {% endif %}
     
     <section class="description">
       <ul class="links">

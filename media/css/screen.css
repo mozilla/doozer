@@ -243,7 +243,7 @@ header {
 
 #messages {
     background: none;
-    color: #444;
+    color: #fff;
     font-weight: bold;
     list-style-type: none;
     margin: 1em;
@@ -251,13 +251,15 @@ header {
 }
 
 #messages li {
-    background-color: #FFF997;
+    background-color: #cc0;
+    background-color: rgba(192, 192, 0, 0.5);
     margin: 0;
     padding: .3em 1em;
 }
 
 #messages li.success {
-    background-color: #67ED87;
+    background-color: #0c0;
+    background-color: rgba(0, 192, 0, 0.5);
 }
 
 header nav {
@@ -394,13 +396,13 @@ nav a:hover {color: rgba(255, 255, 255, 1); text-decoration: none;}
 }
 
 .judges div p {
-    padding-left: 160px;
+    padding-left: 170px;
     width: 340px;
 }
 
 .judges div img {
     float:left;
-    margin-right: 1em;
+    margin-right: 1.2em;
 }
 
 .prize {}

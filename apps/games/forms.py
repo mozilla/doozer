@@ -10,6 +10,7 @@ MAX_WIDTH, MAX_HEIGHT = map(int,
 
 
 class GameForm(forms.ModelForm):
+    accept = forms.BooleanField(required=True);
     class Meta(object):
         model = Game
         fields = ('name', 'description', 'url', 'source', 'resources')

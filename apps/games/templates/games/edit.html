@@ -2,6 +2,32 @@
 
 {% block content %}
   <h1>Details</h1>
+  <section class="screenshots">
+    <h2>Screenshots</h2>
+    <ul class="screenshots">
+    {% for screenshot in game.screenshot_set.all %}
+      <li>
+        <img src="{{ screenshot.get_absolute_url }}"/>
+        <a href="{% url games.screenshot_delete game.id,screenshot.id %}"
+          class="screenshot-delete">Delete</a>
+      </li>
+    {% empty %}
+      <li>No Screenshots Available</li>
+    {% endfor %}
+    </ul>
+
+    {% if room_for_more %}
+      <form method="post" action="{% url games.screenshots game.id %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h3>Upload a new screenshot</h3>
+        <ul class="screenshot-form">
+          {{ screenshot_form.as_ul }}
+        </ul>
+        <input type="submit" value="Upload">
+      </form>
+    {% endif %}
+  </section>
+
   {% if form.errors %}
     <ul class="errorlist">
       <li>Please fix the errors and submit again.</li>
@@ -10,11 +36,24 @@
   <form method="post">
     {% csrf_token %}
     <ul>
-      {{ form.as_ul }}
+      <!-- {{ form.as_ul }} -->
+      <li>{{ form.name.errors }}{{ form.name.label_tag }}{{ form.name }}</li>
+      <li>{{ form.description.errors }}{{ form.description.label_tag }}{{ form.description }}</li>
+      <li>{{ form.url.errors }}<label for="id_url">URL of the game:</label>{{ form.url }}</li>
+      <li>
+        {{ form.source.errors }}
+        <label for="id_source" class="optional">
+          URL of the source code:
+        </label>{{ form.source }}
+      </li>
+      <li>
+        <label for="id_resources" class="optional">
+          Describe the tools, libraries and other resources you used in the
+          making of this game:
+        </label>{{ form.resources }}
+      </li>
+      <input name="{{ form.accept.html_name }}" type="hidden" value="true">
     </ul>
-    <input type="submit" value="Edit game" />
+    <input type="submit" value="Save your changes" />
   </form>
-
-  <h2>Screenshots</h2>
-  <p><a href="{% url games.screenshots game.id %}">Edit screenshots</a></p>
 {% endblock %}

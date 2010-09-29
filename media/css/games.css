@@ -7,15 +7,24 @@
     height: 200px;
     margin-bottom: 1em;
     background: rgba(0,0,0,.2);
-    -moz-box-shadow: inset 0 8px 4px rgba(0,0,0,.2);
-
+            box-shadow: inset 0 8px 4px rgba(0,0,0,.2);
+       -moz-box-shadow: inset 0 8px 4px rgba(0,0,0,.2);
+    -webkit-box-shadow: inset 0 8px 4px rgba(0,0,0,.2);
             border-radius: 1em;
        -moz-border-radius: 1em;
     -webkit-border-radius: 1em;
 }
 
+.games section.screenshots {
+    height: auto;
+}
+
 .games .tile-list .game:nth-child(2n+1) {
     margin-right: 2%;
+}
+
+.games .game p {
+    width: auto;
 }
 
 body.games h1 {
@@ -64,6 +73,7 @@ body.games ul.links li a {
 .games section.screenshots {
     float: right;
     width: 300px;
+    margin-top: -1em;
 }
 
 body.games ul.screenshots {
@@ -73,12 +83,13 @@ body.games ul.screenshots {
 
 body.games ul.screenshots li {
     text-align:center;
-    margin: 1em;
     padding: 0;
 }
 
 body.games ul.screenshots li img {
     max-width: 300px;
+    max-height: 240px;
+    margin-top: 1em;
 }
 
 body.games a.screenshot-delete {
@@ -86,5 +97,5 @@ body.games a.screenshot-delete {
 }
 
 .games .game.single p {
-    width: 60%;
+    width: 500px;
 }

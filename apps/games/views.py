@@ -34,7 +34,14 @@ def edit(request, game_id):
     """Edit an existing game."""
     game = get_object_or_404(Game, creator=request.user, pk=game_id)
     form = GameForm(instance=game)
-    c = {'game': game, 'form': form}
+    room_for_more = game.screenshot_set.count() < settings.SCREENSHOTS_MAX
+    screenshot_form = ScreenshotForm()
+
+    c = {'game': game,
+         'form': form,
+         'room_for_more': room_for_more,
+         'screenshot_form': screenshot_form,
+        }
 
     if request.POST:
         form = GameForm(request.POST, instance=game)
@@ -94,19 +101,28 @@ def screenshots(request, game_id):
     room_for_more = game.screenshot_set.count() < settings.SCREENSHOTS_MAX
     form = ScreenshotForm()
 
+    game = get_object_or_404(Game, creator=request.user, pk=game_id)
+    form = GameForm(instance=game)
+    room_for_more = game.screenshot_set.count() < settings.SCREENSHOTS_MAX
+    screenshot_form = ScreenshotForm()
+
+
     if request.POST and room_for_more:
-        form = ScreenshotForm(request.POST, request.FILES)
-        if form.is_valid():
-            new_screenshot = form.save(commit=False)
+        screenshot_form = ScreenshotForm(request.POST, request.FILES)
+        if screenshot_form.is_valid():
+            new_screenshot = screenshot_form.save(commit=False)
             new_screenshot.game = game
             new_screenshot.save()
 
             messages.success(request, "Your screenshot has been uploaded!")
-            return HttpResponseRedirect(reverse('games.screenshots',
+            return HttpResponseRedirect(reverse('games.edit',
                                                 args=[game.id]))
-
-    c = {'game': game, 'form': form, 'room_for_more': room_for_more}
-    return render(request, 'games/screenshots.html', c)
+    c = {'game': game,
+         'form': form,
+         'room_for_more': room_for_more,
+         'screenshot_form': screenshot_form,
+    }
+    return render(request, 'games/edit.html', c)
 
 
 @login_required
