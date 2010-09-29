@@ -4,5 +4,6 @@
 -e git://github.com/jbalogh/django-cache-machine.git#egg=django-cache-machine
 -e git://github.com/zerok/django-flatblocks.git#egg=django_flatblocks
 -e git://github.com/rnk/django-media-bundler.git#egg=django-media-bundler
+-e git://github.com/mozilla/django-csp.git#egg=django-csp
 python-memcached
 django-registration==0.7

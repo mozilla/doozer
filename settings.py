@@ -85,6 +85,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'csp.middleware.CSPMiddleware',
 )
 
 ROOT_URLCONF = 'doozer.urls'
@@ -106,6 +107,7 @@ INSTALLED_APPS = (
     'registration',
     'flatblocks',
     'media_bundler',
+    'csp',
     'games',
     'core',
     'static',
