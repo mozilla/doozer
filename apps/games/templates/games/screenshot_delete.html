@@ -1,12 +1,16 @@
 {% extends "games/base.html" %}
 
+{% block class %}screenshots{% endblock %}
+
 {% block content %}
   <h1>Delete screenshot</h1>
-  <p>Are you sure you want to delete the screenshot? This cannot be undone!</p>
+  <p><b>Are you sure you want to delete the screenshot? This cannot be undone!</b></p>
   <img src="{{ screenshot.get_absolute_url }}"/>
   <form method="post">
     {% csrf_token %}
-    <input type="submit" value="Delete it!"/>
+    <p>
+      <input type="submit" value="Delete it!"/> or <b><a href="{% url games.edit game.id %}">Cancel</a></b>
+    </p>
   </form>
-  <a href="{% url games.screenshots game.id %}">Cancel</a>
+
 {% endblock %}
