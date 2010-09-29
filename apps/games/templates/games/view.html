@@ -3,26 +3,8 @@
 {% block content %}
   <h1>{{ game.name }}</h1>
   <article class="game single">
-
-    <ul class="links">
-      {% if game.creator == request.user %}
-        <li><a href="{% url games.edit game.id %}">Edit</a></li>
-      {% endif %}
-      <li><a href="{{ game.url }}">Play</a></li>
-      {% if game.source %}
-        <li><a href="{{ game.source }}">See the source</a></li>
-      {% endif %}
-    </ul>
-
-    <h2>Description</h2>
-    <p>{{ game.description|linebreaks }}</p>
-
-    {% if game.resources %}
-      <h2>Resources Used</h2>
-      <p>{{ game.resources|linebreaks }}</p>
-    {% endif %}
-
     {% if game.screenshot_set.all %}
+    <section class="screenshots">
       <h2>Screenshots</h2>
       <ul class="screenshots">
       {% for screenshot in game.screenshot_set.all %}
@@ -31,6 +13,31 @@
         </li>
       {% endfor %}
       </ul>
+    </section>
     {% endif %}
+    
+    <section class="description">
+      <ul class="links">
+        <li><a href="{{ game.url }}">Play the game</a></li>
+        {% if game.source %}
+          <li><a href="{{ game.source }}">See the source</a></li>
+        {% endif %}
+        {% if game.creator == request.user %}
+          <li><a href="{% url games.edit game.id %}">Edit</a></li>
+        {% endif %}
+      </ul>
+
+      <h2>Description</h2>
+      <p>{{ game.description|linebreaks }}</p>
+
+      {% if game.resources %}
+        <h2>Resources Used</h2>
+        <p>{{ game.resources|linebreaks }}</p>
+      {% endif %}
+    </section>
+    
+    {% if not game.screenshot_set.all %}
+    {% endif %}
+
   </article>
 {% endblock %}

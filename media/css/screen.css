@@ -389,7 +389,19 @@ nav a:hover {color: rgba(255, 255, 255, 1); text-decoration: none;}
     position: relative;
 }
 
-.judge {}
+.judges div {
+    clear: left;
+}
+
+.judges div p {
+    padding-left: 160px;
+    width: 340px;
+}
+
+.judges div img {
+    float:left;
+    margin-right: 1em;
+}
 
 .prize {}
 
@@ -408,6 +420,7 @@ body.errorpage h3 {
 /* Clearfix */
 header:after,
 article:after,
+.judges:after,
 #content:after,
 .game:after {
     content: ".";
