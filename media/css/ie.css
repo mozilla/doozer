@@ -1,0 +1,50 @@
+body { 
+    background: #9aa451 url('/media/img/tile.png') repeat top center; /* for non-css3 browsers */
+}
+
+nav.toc,
+aside {
+    background: #777442;
+    background: rgba(0,0,0,.2);
+}
+
+.home #content {
+    background:transparent url('/media/img/lines.png') no-repeat 330px top;
+}
+
+#page {
+    background-color: #959051;
+}
+
+#messages li {
+    background-color: #cc0;
+}
+
+#messages li.success {
+    background-color: #0c0;
+}
+
+header nav .selected, input[type=submit] {
+    background-color: #de5f3f;
+}
+
+header nav a:hover {
+    background-color: #b69362;
+}
+
+
+nav a {color: rgba(255, 255, 255, 1); text-decoration: none;}
+nav a:hover {color: rgba(255, 255, 255, 1); text-decoration: none;}
+
+.button a{
+    background:#db3e36; /* for non-css3 browsers */
+    zoom: 1;
+    cursor: pointer;
+    border: 2px solid black;
+    border-color: white #888 black #888;
+    filter: progid:DXImageTransform.Microsoft.Shadow(color='#444444', Direction=180, Strength=10);    
+}
+
+.games .tile-list .game {
+    margin-right: 1%;
+}

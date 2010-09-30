@@ -6,6 +6,7 @@
     padding: 1em 3%;
     height: 200px;
     margin-bottom: 1em;
+    background: #777442;
     background: rgba(0,0,0,.2);
             box-shadow: inset 0 8px 4px rgba(0,0,0,.2);
        -moz-box-shadow: inset 0 8px 4px rgba(0,0,0,.2);
@@ -66,7 +67,7 @@ body.games ul.links li {
 }
 
 body.games ul.links li a {
-    font-family: OrbitronMed, Verdana, sans-serif;
+    font-family: OrbitronMed, "Courier New", monospace;
     font-size: 1.5em;
 }
 
