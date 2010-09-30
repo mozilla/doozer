@@ -1,3 +1,26 @@
+@font-face {
+font-family: "OrbitronMed";
+src: url('/media/fonts/orbitron-medium.eot');
+src: local('☺'), url("/media/fonts/orbitron-medium.otf") format("opentype");
+}
+@font-face {
+font-family: "OrbitronBold";
+src: url('/media/fonts/orbitron-medium.eot');
+src: local('☺'), url("/media/fonts/orbitron-bold.otf") format("opentype");
+}
+
+@font-face{
+font-family: 'Karnivore';
+src: url('/media/fonts/KARNIBLA.eot');
+src: local('☺'), url('/media/fonts/KARNIBLA.ttf') format('truetype');
+}
+
+@font-face{
+font-family: 'Matiz';
+src: url('/media/fonts/Matiz.eot');
+src: local('☺'), url('/media/fonts/Matiz.ttf') format('truetype');
+}
+
 html {
     padding-bottom: 0px; 
     padding-top: 0px;
@@ -20,34 +43,10 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-@font-face {
-    font-family: "OrbitronMed";
-    src: url("/media/fonts/orbitron-medium.otf") format("opentype");
-}
-@font-face {
-    font-family: "OrbitronBold";
-    src: url("/media/fonts/orbitron-bold.otf") format("opentype");
-}
-
-@font-face{
-font-family: 'Museo'; 
-src: url('/media/fonts/Museo500-Regular.otf') format('opentype');
-}
-
-@font-face{
-font-family: 'Karnivore'; 
-src: url('/media/fonts/KARNIBLA.ttf') format('truetype');
-}
-
-@font-face{
-font-family: 'Matiz'; 
-src: url('/media/fonts/Matiz.ttf') format('truetype');
-}
-
 a:link, a:hover, a:active, a:focus, a:visited {color: #fdeb6a;}
 a:hover {color: #fdeb6a; text-decoration: underline;}
 
-h1, h2, h3 {font-family: 'OrbitronMed', Verdana, sans-serif; text-transform: uppercase; letter-spacing: 1px;}
+h1, h2, h3 {font-family: OrbitronMed, "Courier New", monospace; text-transform: uppercase; letter-spacing: 1px;}
 
 h1 {
     font-size: 3em;
@@ -80,7 +79,7 @@ p {
 
 .copy #content { margin-bottom: 3em; }
 .rules #content {
-    background: #9aa451 url('/media/img/tile.png') repeat top center; /* for non-css3 browsers */
+    background: url('/media/img/sword.png') no-repeat right 240px;
     background: url('/media/img/sword.png') no-repeat right 240px, url('/media/img/raygun.png') no-repeat bottom right transparent;
 }
 
@@ -162,6 +161,7 @@ nav.toc a {
     font-size: 12px;
     text-align: left;
     padding: 20px 40px;
+    border-radius: 0 0 2em 2em;
     -moz-border-radius: 0 0 2em 2em;
     -webkit-border-radius: 0 0 2em 2em;
     width: 900px;
@@ -210,7 +210,7 @@ footer {
 /* ----------------------------------------- */
 
 header {
-    font-family: 'Matiz', Verdana, sans-serif;
+    font-family: Matiz, Verdana, sans-serif;
     z-index: 2;
     max-width: 900px;
     padding: 0;
@@ -272,8 +272,14 @@ header nav {
 header nav .selected, input[type=submit] {
     margin-bottom: 40px;
     font-size: 13px;
+    border-radius: 0.5em;
     -moz-border-radius: 0.5em;
     -webkit-border-radius: 0.5em;
+    box-shadow: 
+        inset rgba(108, 15, 0, 0.4) 0 -2px 0px,
+        inset rgba(255, 255, 255, 0.2) 0 1px 0px,
+        inset rgba(255, 255, 255, 0.2) 0 -3px 4px,
+        inset rgba(255, 255, 255, 0.2) 0 20px 6px;
     -moz-box-shadow: 
         inset rgba(108, 15, 0, 0.4) 0 -2px 0px,
         inset rgba(255, 255, 255, 0.2) 0 1px 0px,
@@ -298,8 +304,9 @@ header nav a {
     text-shadow: 0 1px 1px rgba(0,0,0,.5);
 }
 header nav a:hover {
-    color: rgba(255, 255, 255, 1); 
+    color: #fff; 
     text-decoration: none; 
+    border-radius: 0.5em;
     -moz-border-radius: 0.5em;
     -webkit-border-radius: 0.5em;
     -moz-box-shadow:
@@ -323,8 +330,8 @@ header nav a:hover {
     }
 
 
-nav a {color: rgba(255, 255, 255, 1); text-decoration: none;}
-nav a:hover {color: rgba(255, 255, 255, 1); text-decoration: none;}
+nav a {color: white; text-decoration: none;}
+nav a:hover {color: white; text-decoration: none;}
 
 /* end navigation */
 
@@ -355,7 +362,7 @@ nav a:hover {color: rgba(255, 255, 255, 1); text-decoration: none;}
     font-size: 48px;
     text-transform: uppercase;
     letter-spacing: -3px;
-    font-family: "Matiz";
+    font-family: Matiz, Verdana, sans-serif;
     text-decoration: none;
     text-align: center; 
     line-height: 52px; 
@@ -370,7 +377,6 @@ nav a:hover {color: rgba(255, 255, 255, 1); text-decoration: none;}
     
     background:rgba(219, 62, 54,1); /* for non-css3 browsers */
 
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(219, 62, 54,1)', endColorstr='rgba(138, 31, 26,1)'); /* for IE */
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(219, 62, 54,1)), to(rgba(138, 31, 26,1))); /* for webkit browsers */
     background: url('/media/img/screen.png') repeat top center, -moz-linear-gradient(top,  rgba(219, 62, 54,1), rgba(138, 31, 26,1)); /* for firefox 3.6+ */
 }
