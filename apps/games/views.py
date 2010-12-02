@@ -1,3 +1,5 @@
+from operator import or_
+
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -73,17 +75,30 @@ def delete(request, game_id):
 
 def view(request, game_id, slug=None):
     """View one game. It must be approved or yours."""
+    filters = []
     user = request.user if request.user.is_authenticated() else None
+    if user and not user.is_superuser:
+        filters.append(Q(creator=user))
+    if not user or not user.is_superuser:
+        filters.append(Q(is_approved=True))
+
     game = get_object_or_404(Game,
-        Q(is_approved=True) | Q(creator=user),
+        reduce(or_, filters, Q()),
         id=game_id)
     return render(request, 'games/view.html', {'game': game})
 
 
 def view_list(request):
     """View a list of games."""
-    # TODO(james) Paginate
-    games = Game.objects.filter(is_approved=True)
+    # TODO: Paginate.
+    filters = []
+    user = request.user if request.user.is_authenticated() else None
+    if user and not user.is_superuser:
+        filters.append(Q(creator=user))
+    if not user or not user.is_superuser:
+        filters.append(Q(is_approved=True))
+
+    games = Game.objects.filter(reduce(or_, filters, Q()))
     return render(request, 'games/list.html', {'games': games})
 
 
