@@ -5,7 +5,7 @@ def nav(request):
         'menu' : [
             ('Competition Home', 'home'),
             ('Rules', 'rules'),
-            ('Judging', 'judging'),
+            ('Judges', 'judges'),
             ('Prizes', 'prizes'),
             ('Resources', 'resources'),
         ],

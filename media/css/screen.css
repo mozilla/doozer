@@ -429,6 +429,7 @@ body.errorpage h3 {
 header:after,
 article:after,
 .judges:after,
+.judges div:after,
 #content:after,
 .game:after {
     content: ".";
