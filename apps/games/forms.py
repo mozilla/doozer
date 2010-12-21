@@ -26,6 +26,10 @@ class ScreenshotForm(forms.ModelForm):
         if not file:
             raise forms.ValidationError('You must upload an image!')
 
+        _, _, ext = file.name.rpartition('.')
+        if not ext.lower() in ('png', 'gif', 'jpg', 'jpeg'):
+            raise forms.ValidationError('Invalid file type!')
+
         if file.size >> 10 > settings.SCREENSHOTS_MAX_SIZE:
             msg = 'The image was too big (%i KB)! The limit is %i KB.'
             raise forms.ValidationError(msg % (file.size >> 10,
