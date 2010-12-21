@@ -1,8 +1,94 @@
 {% extends "base.html" %}
+
 {% load flatblock_tags %}
 
 {% block class %}prizes copy{% endblock %}
 
 {% block content %}
-  {% flatblock "prizes" 3600 %}
+  <h1>Prizes</h1>
+  <section class="grandprize">
+    <h2>BEST OVERALL</h2>
+    <h3>for the best overall score</h3>
+    <ul class="prizelist">
+      <li><span>The Grand Prize: Trip to <a href="http://www.gdconf.com/">GDC 2011</a>!!</span>
+        <ul>
+          <li>Get the red carpet treatment!</li>
+          <li>Entry to the Indie Game Developer Conference</li>
+          <li>A visit to Mozilla's headquarters in Mountain View</li>
+          <li>Includes flight and 7 nights of hotel accomodations in San Francisco</li>
+        </ul>
+      </li>
+      <li>Featured in <a href="http://www.mozilla.com/en-US/firefox/beta/">Firefox 4</a> Gallery
+        <p>Promote your game to over 300M people who use Firefox.</li>
+      <li>Game logo or other design asset
+        <p>Created by Mozilla Principal Designer Sean Martell</p></li>
+      <li>Special Edition Mozilla Swag
+        <p>Leave room in your luggage. Trust us.</p></li>
+      <li><a href="http://www.adobe.com/products/dreamweaver/whatisdreamweaver/">Adobe Dreamweaver Creative Suite 5</a>
+        <p>Industry-leading web design software, an outstanding visual HTML editor and superb code editor.</p></li>
+      <li><a href="http://games.yahoo.com/">Yahoo! Games</a> prize pack
+        <ul>
+          <li>promotion of blog post on Y! Games Homepage</li>
+          <li>Free game download</li>
+          <li>1-hour consultation with Greg Cohn, head of product for Y! Games</li>
+        </ul>
+      </li>
+      <li><a href="http://membership.thinkvitamin.com/">Thinkvitamin Silver Membership</a>
+        <p>Learn Web design & development through 100s of high quality video courses and online conferences to keep you on the cutting edge.</p></li>
+      <li><a href="http://www.nvidia.com/object/product-geforce-gtx-460-us.html">Nvidia GeForce GTX 460</a>
+        <p>Tailor made to hit the gamers’ sweet spot, NVIDIA® GeForce® GTX 460 delivers revolutionary levels of price/performance.</p></li>
+      <li><i>Secrets of the JavaScript Ninja</i>
+        <p>Signed by the creator of jQuery, John Resig</p></li>
+      <li>Special Edition Game On T-Shirt
+        <p>Signed by the inventor of JavaScript, Brendan Eich</p></li>
+      <li><a href="http://1800funjump.com/">Tandem 18,000 foot skydive w/ video and stills</a>
+        <p>Optional, naturally.</p></li>
+      <li>Buckyballs!
+        <p>'Nuff said.</p></li>
+    </ul>
+  </section>
+  <section class="categoryprizes">
+    <h2>CATEGORY PRIZES</h2>
+    <ul class="prizelist">
+      <li>Awesome games will be featured in the <a href="http://www.mozilla.com/en-US/firefox/beta/">Firefox 4</a> Gallery</li>
+      <li><a href="http://www.adobe.com/products/dreamweaver/whatisdreamweaver/">Adobe Dreamweaver Creative Suite 5</a></li>
+      <li>Guest blog post on <a href="http://games.yahoo.com/">Yahoo! Games</a></li>
+      <li><a href="http://membership.thinkvitamin.com/">Thinkvitamin Silver Membership</a></li>
+      <li><i>Secrets of the JavaScript Ninja</i></li>
+      <li>Special Edition Game On T-Shirt</li>
+      <li><a href="http://www.nvidia.com/object/product-geforce-gtx-460-us.html">Nvidia GeForce GTX 460</a></li>
+      <li>Special Edition Mozilla Swag</li>
+      <li>Buckyballs!</li>
+    </ul>
+    <ul class="categories">
+      <li><hgroup>
+        <h2>Best Technology</h2>
+        <h3>the highest technology score</h3>
+       </hgroup></li>
+      <li><hgroup>
+        <h2>Best Web-iness</h2>
+        <h3>the highest web-iness score</h3>
+      </hgroup></li>
+      <li><hgroup>
+        <h2>Best Aesthetics</h2>
+        <h3>the highest aesthetics score</h3>
+      </hgroup></li>
+      <li><hgroup>
+        <h2>Most Original</h2>
+        <h3>the highest originality score</h3>
+      </hgroup></li>
+      <li><hgroup>
+        <h2>Best Polish</h2>
+        <h3>the highest polish score</h3>
+      </hgroup></li>
+      <li><hgroup>
+        <h2>Most Fun</h2>
+        <h3>the highest fun score</h3>
+      </hgroup></li>
+      <li><hgroup>
+        <h2>Community Choice</h2>
+        <h3>highest user voting score</h3>
+      </hgroup></li>
+    </ul>
+  </section>
 {% endblock %}

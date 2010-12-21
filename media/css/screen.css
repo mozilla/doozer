@@ -411,7 +411,147 @@ nav a:hover {color: white; text-decoration: none;}
     margin-right: 1.2em;
 }
 
-.prize {}
+.prizes #page {
+    padding: 20px 0;
+    width: 980px;
+    max-width: 980px;
+}
+
+body.prizes header, body.prizes footer, body.prizes h1{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.grandprize {
+    background: rgba(0,0,0,.1);
+    display: block;
+    padding-left: 50%;
+    height: 400px;
+    line-height: 1.5em;
+    width: 50%;
+    background: url('/media/img/grandprize.png') no-repeat 30px 20px rgba(0,0,0,.1);
+}
+
+ul.prizelist {
+    margin-right: 40px;
+    padding: 0;
+    list-style-position:inside;
+    list-style-type: square;
+    font-size: 1.1em;
+}
+
+.prizelist li {
+    padding: 3px 0 3px 10px;
+}
+
+
+.grandprize li {
+    cursor: pointer;
+    position: relative;
+    -moz-transition: background .1s ease-in-out;
+}
+
+.grandprize li p,
+.grandprize li ul {
+    -moz-border-radius: 6px 0 6px 6px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+    pointer-events: none;
+    margin: 0;
+    z-index: 1;
+    padding: 1em 2em;
+    position: absolute;
+    right: 100%;
+    height: auto;
+    top: 0;
+    font-size: .9em;
+    width: 360px;
+    background: #444;
+    -moz-transition: opacity .1s ease-in-out;
+    opacity: 0;
+}
+
+.grandprize li:hover p,
+.grandprize li:hover ul {
+    opacity: 1;
+}
+
+.grandprize li:hover {
+    -moz-border-radius: 0 6px 6px 0;
+    -webkit-border-radius: 0 6px 6px 0;
+    border-radius: 0 6px 6px 0;
+    background: #444;
+    list-style-type: square;
+}
+
+.grandprize > li:first-child span {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.categoryprizes {
+    padding: 40px;
+    display: block;
+    position: relative;
+}
+
+.categoryprizes > h2 {
+    float: left;
+    padding-top: 18px;
+}
+
+.categoryprizes .prizelist {
+    margin: 0 40px 0 50%;
+}
+
+.categories {
+    clear: both;
+    padding-left: 0;
+    padding-top: 2em;
+    list-style-type: none;
+}
+
+.prizes .categories h2 {
+    font-size: 24px;
+}
+
+.prizes .categories h3 {
+    font-size: 14px;
+}
+
+.categories hgroup {
+    margin-left: 78px;
+    display: block;
+}
+
+.categories li {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: url(/media/img/categoryprize.png) no-repeat 10px 8px rgba(0,0,0,.1);;
+    float: left;
+    display: block;
+    width: 48%;
+    margin: 1%;
+}
+
+.categories li:nth-child(2n) {
+    margin: 1% 0 1% 0;
+}
+
+.categories li:nth-child(2n+1) {
+    margin: 1% 4% 1% 0;
+}
+
+.prizes h2 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.prizes h3 {
+    color: #ddda8a;
+    margin-top: .5em;
+}
 
 body.errorpage h1 {
     font-size: 5em;
