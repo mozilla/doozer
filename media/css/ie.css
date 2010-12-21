@@ -24,6 +24,16 @@ aside {
     background-color: #0c0;
 }
 
+.prizelist li p,
+.prizelist li ul {
+    display: none;
+}
+
+.prizelist li:hover p,
+.prizelist li:hover ul {
+    display: block;
+}
+
 header nav .selected, input[type=submit] {
     background-color: #de5f3f;
 }
