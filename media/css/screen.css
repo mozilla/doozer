@@ -39,7 +39,7 @@ body {
     font-size:12px;
     line-height: 1.6em;
     margin: 0 auto;
-    text-shadow: 0 0 2px rgba(0,0,0,.5);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
     text-rendering: optimizeLegibility;
 }
 
@@ -54,7 +54,7 @@ h1 {
 }
 
 .copy h1, .copy h2, .copy h3 {
-    text-shadow: 0 1px 2px rgba(0,0,0,.5);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
 }
 .copy h1 {
     font-size: 4em;
@@ -397,13 +397,35 @@ nav a:hover {color: white; text-decoration: none;}
     position: relative;
 }
 
+.judging #content > h3 {
+    position: absolute;
+    right: 0;
+    top: 8px;
+    font-size: 1em;
+    margin: 0;
+}
+
+.judges {
+    clear: both;
+}
+
+.judges div h2 {
+    line-height: 1em;
+}
+
 .judges div {
+    float: left;
+    width: 50%;
+}
+
+.judges div:nth-child(2n+1) {
     clear: left;
 }
 
 .judges div p {
     padding-left: 170px;
-    width: 340px;
+    padding-right: 30px;
+    width: auto;
 }
 
 .judges div img {
