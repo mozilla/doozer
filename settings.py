@@ -109,6 +109,7 @@ INSTALLED_APPS = (
     'media_bundler',
     'csp',
     'games',
+    'vote',
     'core',
     'static',
 )
@@ -141,6 +142,9 @@ SCREENSHOTS_MAX_SIZE = 600
 
 # How large (size) can screenshots be? ('WIDTHxHEIGHT')
 SCREENSHOTS_MAX_DIMENSIONS = '640x480'
+
+# How many games to include in each ballot.
+BALLOT_SIZE = 5
 
 MEDIA_BUNDLES = (
     {

@@ -1,0 +1,20 @@
+{% extends "vote/base.html" %}
+
+{% block content %}
+  <h1>Vote on Games</h1>
+
+  <ol>
+    {% for game in ballot.get_games %}
+      <li>{{ game }}
+        <form action="{% url vote.vote %}" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="game" value="{{ game.id }}"/>
+          <input type="text" size="1" name="score"/>
+          <input type="submit" value="Vote"/>
+        </form>
+      </li>
+    {% endfor %}
+  </ol>
+
+{% endblock %}
+
