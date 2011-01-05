@@ -9,7 +9,7 @@ from core.models import ModelBase
 from games.models import Game
 
 
-SCORES = zip(range(0, 5), range(0, 5))
+SCORES = zip(range(1, 6), range(1, 6))
 
 
 class Ballot(ModelBase):
@@ -46,7 +46,7 @@ class Ballot(ModelBase):
 class Vote(ModelBase):
     creator = models.ForeignKey(User)
     game = models.ForeignKey(Game)
-    score = models.SmallIntegerField(choices=SCORES)
+    score = models.SmallIntegerField(choices=SCORES, default=1)
 
     def __unicode__(self):
         tup = self.creator.username, self.game.name, self.score

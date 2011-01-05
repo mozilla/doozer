@@ -171,6 +171,7 @@ MEDIA_BUNDLES = (
             'particle.js',
             'screen.js',
             'global.js',
+            'voting.js',
         ),
     },
 )

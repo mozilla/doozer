@@ -92,3 +92,10 @@ label.optional:after {
     margin: 4px 0;
 }
 
+form.vote input[type="submit"] {
+    display: none;
+}
+
+form.vote.changed input[type="submit"] {
+    display: inline;
+}

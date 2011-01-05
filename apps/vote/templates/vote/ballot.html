@@ -1,4 +1,5 @@
 {% extends "vote/base.html" %}
+{% load voting_tags %}
 
 {% block content %}
   <h1>Vote on Games</h1>
@@ -6,10 +7,15 @@
   <ol>
     {% for game in ballot.get_games %}
       <li>{{ game }}
-        <form action="{% url vote.vote %}" method="post">
+        <form class="vote" action="{% url vote.vote %}" method="post">
           {% csrf_token %}
+          {% vote_score for request.user game as score %}
           <input type="hidden" name="game" value="{{ game.id }}"/>
-          <input type="text" size="1" name="score"/>
+          <input type="radio" name="score" value="1" {% if score == 1 %}checked="checked"{% endif %} />
+          <input type="radio" name="score" value="2" {% if score == 2 %}checked="checked"{% endif %} />
+          <input type="radio" name="score" value="3" {% if score == 3 %}checked="checked"{% endif %} />
+          <input type="radio" name="score" value="4" {% if score == 4 %}checked="checked"{% endif %} />
+          <input type="radio" name="score" value="5" {% if score == 5 %}checked="checked"{% endif %} />
           <input type="submit" value="Vote"/>
         </form>
       </li>

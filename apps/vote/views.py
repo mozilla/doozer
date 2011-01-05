@@ -31,10 +31,11 @@ def vote(request):
     form = VoteForm(request.POST)
 
     if form.is_valid():
-        game = get_object_or_404(Game, pk=form.cleaned_data['game'])
+        game = get_object_or_404(Game, pk=form.cleaned_data['game'].id)
         if not game in ballot.get_games():
             return HttpResponseBadRequest(mimetype='application/json')
-        vote = Vote.objects.get_or_create(creator=request.user, game=game)
+        vote, created = Vote.objects.get_or_create(creator=request.user,
+                                                   game=game)
         vote.score = form.cleaned_data['score']
         vote.save()
         return HttpResponse(mimetype='application/json')
