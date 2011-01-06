@@ -8,11 +8,13 @@ from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 
+from core.decorators import enabled_or_404
 from core.template import render
 from games.forms import GameForm, ScreenshotForm
 from games.models import Game, Screenshot
 
 
+@enabled_or_404('ALLOW_SUBMISSIONS')
 @login_required
 def create(request):
     """Create a new game."""
@@ -31,6 +33,7 @@ def create(request):
     return render(request, 'games/create.html', {'form': form})
 
 
+@enabled_or_404('ALLOW_EDITING')
 @login_required
 def edit(request, game_id):
     """Edit an existing game."""
@@ -57,6 +60,7 @@ def edit(request, game_id):
     return render(request, 'games/edit.html', c)
 
 
+@enabled_or_404('ALLOW_DELETING')
 @login_required
 def delete(request, game_id):
     """Delete an existing game."""
@@ -88,6 +92,7 @@ def view(request, game_id, slug=None):
     return render(request, 'games/view.html', {'game': game})
 
 
+@enabled_or_404('ALLOW_GALLERY')
 def view_list(request):
     """View a list of games."""
     # TODO: Paginate.

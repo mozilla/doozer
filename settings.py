@@ -124,6 +124,11 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'core.context_processors.nav',
 )
 
+ALLOW_SUBMISSIONS = True
+ALLOW_EDITING = True
+ALLOW_DELETING = True
+ALLOW_GALLERY = False
+
 # Account activation period
 ACCOUNT_ACTIVATION_DAYS = 7
 
