@@ -4,20 +4,26 @@
 {% block content %}
   <h1>Vote on Games</h1>
 
-  <ol>
+  <ol class="ballot">
     {% for game in ballot.get_games %}
-      <li>{{ game }}
-        <form class="vote" action="{% url vote.vote %}" method="post">
-          {% csrf_token %}
-          {% vote_score for request.user game as score %}
-          <input type="hidden" name="game" value="{{ game.id }}"/>
-          <input type="radio" name="score" value="1" {% if score == 1 %}checked="checked"{% endif %} />
-          <input type="radio" name="score" value="2" {% if score == 2 %}checked="checked"{% endif %} />
-          <input type="radio" name="score" value="3" {% if score == 3 %}checked="checked"{% endif %} />
-          <input type="radio" name="score" value="4" {% if score == 4 %}checked="checked"{% endif %} />
-          <input type="radio" name="score" value="5" {% if score == 5 %}checked="checked"{% endif %} />
-          <input type="submit" value="Vote"/>
-        </form>
+      <li>
+        <section class="game" id="game-{{ game.id }}">
+          <h2><a href="{{ game.get_absolute_url }}">{{ game.name }}</a></h2>
+          <form class="vote" action="{% url vote.vote %}" method="post">
+            {% csrf_token %}
+            {% vote_score for request.user game as score %}
+            <input type="hidden" name="game" value="{{ game.id }}"/>
+            <div class="stars stars-{{ score }}">
+              <label><input type="radio" name="score" value="1" {% if score == 1 %}checked="checked"{% endif %} /></label>
+              <label><input type="radio" name="score" value="2" {% if score == 2 %}checked="checked"{% endif %} /></label>
+              <label><input type="radio" name="score" value="3" {% if score == 3 %}checked="checked"{% endif %} /></label>
+              <label><input type="radio" name="score" value="4" {% if score == 4 %}checked="checked"{% endif %} /></label>
+              <label><input type="radio" name="score" value="5" {% if score == 5 %}checked="checked"{% endif %} /></label>
+            </div>
+            <input type="submit" value="Vote"/>
+            <a target="_blank" class="action" href="{{ game.url }}">Play</a>
+          </form>
+        </section>
       </li>
     {% endfor %}
   </ol>

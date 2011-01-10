@@ -3,18 +3,31 @@
     display: block;
     width: 43%;
     float:left;
-    padding: 1em 3%;
-    height: 200px;
+    padding: 2em 2%;
+    height: 150px;
     margin-bottom: 1em;
     background: #777442;
     background: rgba(0,0,0,.2);
-            box-shadow: inset 0 8px 4px rgba(0,0,0,.2);
+/*            box-shadow: inset 0 8px 4px rgba(0,0,0,.2);
        -moz-box-shadow: inset 0 8px 4px rgba(0,0,0,.2);
     -webkit-box-shadow: inset 0 8px 4px rgba(0,0,0,.2);
             border-radius: 1em;
        -moz-border-radius: 1em;
     -webkit-border-radius: 1em;
-}
+*/}
+
+.games .tile-list .game {
+    width: 36%;
+    margin-left: 3%;
+    padding-left: 8%;
+    position: relative;
+/*            box-shadow: inset 0 8px 4px rgba(0,0,0,.2);
+       -moz-box-shadow: inset 0 8px 4px rgba(0,0,0,.2);
+    -webkit-box-shadow: inset 0 8px 4px rgba(0,0,0,.2);
+            border-radius: 1em;
+       -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+*/}
 
 .games section.screenshots {
     height: auto;
@@ -26,15 +39,42 @@
 
 .games .game p {
     width: auto;
+    max-height: 4.8em;
+    min-height: 4.8em;
+    overflow: hidden;
 }
+
+.game nav {
+    position: absolute;
+    bottom: 2em;
+}
+
+.thumb {
+    position: absolute;
+    left: -32px;
+    width: 71px;
+    height: 71px;
+    padding: 8px;
+    background: url("/media/img/thumb.png") no-repeat;
+}
+
+.thumb div {
+    width: 71px;
+    height: 71px;
+    overflow: hidden;
+}
+
 
 body.games h1 {
     clear: both;
-    margin: 1em 0 1em 0;
+    line-height: 1em;
+    font-size: 4em;
+    margin: 1em 0 .5em 0;
 }
 
 body.games h2 {
     clear: left;
+    margin-top: 1px;
 }
 
 .games .description h2 {
@@ -56,21 +96,20 @@ body.games p.edit {
 
 body.games ul.links {
     list-style-type: none;
-    margin: 1em 0 0;
     padding: 0;
 }
 
 body.games ul.links li {
-    float: left;
+    display: inline;
+    display: inline-block;
     margin: 0;
-    padding: 0 1em 2em 1em;
 }
 
-body.games ul.links li a {
+/*body.games ul.links li a {
     font-family: OrbitronMed, "Courier New", monospace;
     font-size: 1.5em;
 }
-
+*/
 .games section.screenshots {
     float: right;
     width: 300px;

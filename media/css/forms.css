@@ -22,10 +22,9 @@ form textarea {
     width: 310px;
 }
 
-form input[type=submit] {
+form input[type=submit], a.action {
+    text-decoration: none;
     cursor: pointer;
-    min-width: 10em;
-    margin: 0 0 0 208px;
     border: 0;
     font-family: Matiz, Helvetica, Arial, sans-serif;
     color: #fff;
@@ -34,7 +33,11 @@ form input[type=submit] {
     text-transform: uppercase;
     text-shadow: 0 1px 2px rgba(0,0,0,.5);
 }
-form input[type=submit]:hover {
+form input[type=submit] {
+    min-width: 10em;
+    margin: 0 0 0 208px;
+}
+form input[type=submit]:hover, a.action:hover {
     color: #FDEB6A;
 }
 ul.errorlist + label:before {
@@ -98,4 +101,77 @@ form.vote input[type="submit"] {
 
 form.vote.changed input[type="submit"] {
     display: inline;
+}
+
+/* ballot */
+.stars input {
+    visibility: hidden;
+    width: 26px;
+    height: 22px;
+    padding: 0;
+    margin: 0;
+}
+.stars label {
+    display: block;
+    width: 26px;
+    height: 22px;
+    padding: 0;
+    margin: 0;
+    float: left;
+    cursor: pointer;
+}
+.stars label:hover {
+    opacity: .7;
+    background-image: url(/media/img/stars.png);
+}
+.stars {
+    background-image: url(/media/img/stars.png);
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    margin-right: 0.5em;
+    width: 130px;
+    height: 22px;
+    float: right;
+    display: inline-block;
+}
+.stars-4 {
+    background-position: -26px 50%;
+}
+.stars-3 {
+    background-position: -52px 50%;
+}
+.stars-2 {
+    background-position: -78px 50%;
+}
+.stars-1 {
+    background-position: -104px 50%;
+}
+.stars-0 {
+    background-position: -130px 50%;
+}
+.ballot {
+    padding: 0;
+    list-style-type: none;
+}
+.ballot .game {
+    display: block;
+    overflow: hidden;
+    clear: both;
+    padding: 2em;
+    height: auto;
+    margin-bottom: 1em;
+    -moz-transition: .2s opacity;
+    background: #777442;
+    background: rgba(0,0,0,.2);
+}
+.ballot h2 {
+    float: left;
+    margin: 0;
+    max-width: 600px;
+    font-size: 20px;
+    line-height: 28px;
+}
+.ballot .action {
+    margin: 0 1em 0 0;
+    float: right;
 }

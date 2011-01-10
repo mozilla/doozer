@@ -3,7 +3,8 @@ from django.core.urlresolvers import reverse
 def nav(request):
     return {
         'menu' : [
-            ('Competition Home', 'home'),
+            ('Home', 'home'),
+            ('Gallery', 'games.view_list'),
             ('Rules', 'rules'),
             ('Judges', 'judges'),
             ('Prizes', 'prizes'),

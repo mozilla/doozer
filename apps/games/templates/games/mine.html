@@ -4,17 +4,7 @@
   <h1>My Games</h1>
   <article class="tile-list">
   {% for game in games %}
-    <section class="game" id="game-{{ game.id }}">
-      <h2><a href="{{ game.get_absolute_url }}">{{ game.name }}</a></h2>
-      <p>{{ game.description|truncatewords_html:40 }}</p>
-      <ul class="links">
-        <li><a href="{% url games.edit game.id %}">Edit</a></li>
-        <li><a href="{{ game.url }}">Play</a></li>
-        {% if game.source %}
-          <li><a href="{{ game.source }}">See the source</a></li>
-        {% endif %}
-      </ul>
-    </section>
+    {% include "games/game_listing.html" %}
   {% empty %}
     <h2>You haven't submitted any games yet.</h2>
   {% endfor %}

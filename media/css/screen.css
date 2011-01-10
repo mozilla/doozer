@@ -269,7 +269,8 @@ header nav {
     margin-top: 20px;
 }
 
-header nav .selected, input[type=submit] {
+header nav .selected, input[type=submit], a.action {
+    color: #fff;
     margin-bottom: 40px;
     font-size: 13px;
     border-radius: 0.5em;
