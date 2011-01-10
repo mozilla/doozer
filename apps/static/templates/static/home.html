@@ -8,9 +8,11 @@
   <div class="home-message">
       {% flatblock "home" 3600 %}
   </div>
+  {% if settings.ALLOW_SUBMISSIONS %}
   <div class="button">
     <a href="{% url games.create %}"><br>ENTER NOW</a>
   </div>
+  {% endif %}
   <img class="header-left" src="{{ MEDIA_URL }}img/ships-ani.png">
   <img class="header-right" src="{{ MEDIA_URL }}img/raygun.png">
 {% endblock %}

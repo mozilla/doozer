@@ -8,7 +8,9 @@
       <h2><a href="{{ game.get_absolute_url }}">{{ game.name }}</a></h2>
       <p>{{ game.description|truncatewords_html:40 }}</p>
       <ul class="links">
-        <li><a href="{% url games.edit game.id %}">Edit</a></li>
+        {% if settings.ALLOW_EDITING %}
+          <li><a href="{% url games.edit game.id %}">Edit</a></li>
+        {% endif %}
         <li><a href="{{ game.url }}">Play</a></li>
         {% if game.source %}
           <li><a href="{{ game.source }}">See the source</a></li>
@@ -19,5 +21,7 @@
     <h2>You haven't submitted any games yet.</h2>
   {% endfor %}
   </article>
+  {% if settings.ALLOW_SUBMISSIONS %}
   <h3><a href='{% url games.create %}'>Submit a new game</a></h3>
+  {% endif %}
 {% endblock %}

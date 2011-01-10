@@ -12,7 +12,7 @@
         </li>
       {% empty %}
         <li>No Screenshots Available</li>
-        {% if game.creator == request.user %}
+        {% if game.creator == request.user and settings.ALLOW_EDITING %}
           <h3><a href="{% url games.edit game.id %}">Add Screenshots</a></h3>
         {% endif %}
       {% endfor %}
@@ -25,7 +25,7 @@
         {% if game.source %}
           <li><a href="{{ game.source }}">See the source</a></li>
         {% endif %}
-        {% if game.creator == request.user %}
+        {% if game.creator == request.user and settings.ALLOW_EDITING %}
           <li><a href="{% url games.edit game.id %}">Edit</a></li>
         {% endif %}
       </ul>
