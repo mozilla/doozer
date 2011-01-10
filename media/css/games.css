@@ -59,6 +59,7 @@
 }
 
 .thumb div {
+    background: url("/media/img/game_placeholder.png");
     width: 71px;
     height: 71px;
     overflow: hidden;
