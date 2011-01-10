@@ -7,3 +7,4 @@
 -e git://github.com/mozilla/django-csp.git#egg=django-csp
 python-memcached
 django-registration==0.7
+-e git://github.com/alex/django-templatetag-sugar.git#egg=templatetag_sugar

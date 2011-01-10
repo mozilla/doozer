@@ -8,7 +8,7 @@
       <ul class="screenshots">
       {% for screenshot in game.screenshot_set.all %}
         <li id="screenshot-{{ screenshot.id }}">
-          <img src="{{ screenshot.get_absolute_url }}" height="{{ screenshot.file.height }}" width="{{ screenshot.file.width }}">
+          <img src="{{ screenshot.get_absolute_url }}">
         </li>
       {% empty %}
         <li>No Screenshots Available</li>
@@ -21,21 +21,21 @@
     
     <section class="description">
       <ul class="links">
-        <li><a href="{{ game.url }}">Play the game</a></li>
+        <li><a class="action" href="{{ game.url }}">Play the game</a></li>
         {% if game.source %}
-          <li><a href="{{ game.source }}">See the source</a></li>
+          <li><a class="action" href="{{ game.source }}">See the source</a></li>
         {% endif %}
         {% if game.creator == request.user and settings.ALLOW_EDITING %}
-          <li><a href="{% url games.edit game.id %}">Edit</a></li>
+          <li><a class="action" href="{% url games.edit game.id %}">Edit</a></li>
         {% endif %}
       </ul>
 
       <h2>Description</h2>
-      <p>{{ game.description|linebreaks }}</p>
+      {{ game.description|linebreaks }}
 
       {% if game.resources %}
         <h2>Resources Used</h2>
-        <p>{{ game.resources|linebreaks }}</p>
+        {{ game.resources|linebreaks }}
       {% endif %}
     </section>
     

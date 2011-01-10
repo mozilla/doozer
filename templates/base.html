@@ -28,6 +28,9 @@
               {% if settings.ALLOW_SUBMISSIONS or user.game_set.all %}
               <a href="{% url games.mine %}">your games</a>|
               {% endif %}
+              {% if settings.ALLOW_VOTING %}
+              <a href="{% url vote.ballot %}">your votes</a>|
+              {% endif %}
               <a href="{% url auth_logout %}?next=/">logout</a>
             {% else %}
               <a class="login" href="{% url auth_login %}">login</a>

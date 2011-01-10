@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import patterns, url, include
+from django.conf.urls.defaults import patterns, url
 
 urlpatterns = patterns('games.views',
     url(r'^$', 'view_list', name='games.view_list'),
