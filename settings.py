@@ -123,11 +123,13 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.csrf',
     'django.core.context_processors.request',
     'core.context_processors.nav',
+    'core.context_processors.global_settings',
 )
 
 ALLOW_SUBMISSIONS = True
 ALLOW_EDITING = True
 ALLOW_DELETING = True
+ALLOW_VOTING = False
 ALLOW_GALLERY = False
 
 # Account activation period
