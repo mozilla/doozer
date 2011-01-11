@@ -3,7 +3,6 @@
 {% block content %}
   <h1>My Games</h1>
   <article class="tile-list">
-  {% set mine=True %}
   {% for game in games %}
     {% include "games/game_listing.html" %}
   {% empty %}

@@ -13,8 +13,8 @@
     {% if game.source %}
       <a class="action" href="{{ game.source }}">See the source</a>
     {% endif %}
-    {% if mine and game.creator == request.user and settings.ALLOW_EDITING %}
-      <li><a href="{% url games.edit game.id %}">Edit</a></li>
+    {% if game.creator == request.user and settings.ALLOW_EDITING %}
+      <a class="action" href="{% url games.edit game.id %}">Edit</a>
     {% endif %}
   </nav>
 </section>
