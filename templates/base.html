@@ -25,7 +25,7 @@
           <section id="auth">
             {% if user.is_authenticated %}
               signed in as {{ user.username }} |
-              {% if settings.ALLOW_SUBMISSIONS or user.game_set.all() %}
+              {% if settings.ALLOW_SUBMISSIONS or user.game_set.all %}
                 <a href="{% url games.mine %}">your games</a>|
               {% endif %}
               {% if settings.ALLOW_VOTING %}
