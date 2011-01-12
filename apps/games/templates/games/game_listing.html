@@ -9,7 +9,7 @@
   <h2><a href="{{ game.get_absolute_url }}">{{ game.name }}</a></h2>
   <p>{{ game.description }}</p>
   <nav>
-    <a class="action" href="{{ game.url }}">Play</a>
+    <a class="action" target="_blank" href="{{ game.url }}">Play</a>
     {% if game.source %}
       <a class="action" href="{{ game.source }}">See the source</a>
     {% endif %}
