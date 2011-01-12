@@ -8,7 +8,7 @@
   <div class="home-message">
       {% flatblock "home" 3600 %}
   </div>
-  {% if settings.ALLOW_SUBMISSIONS %}
+  {% if settings.ALLOW_VOTING %}
   <div class="button">
     <a href="{% url vote.ballot %}"><br>VOTE NOW!</a>
   </div>
