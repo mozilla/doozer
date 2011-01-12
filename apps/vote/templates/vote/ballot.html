@@ -2,8 +2,15 @@
 {% load voting_tags %}
 
 {% block content %}
+  <h3><a href="/games/">See all the games in the Gallery &raquo;</a></h3>
   <h1>Vote on Games</h1>
-
+  <p>
+    Cast your votes for the Community Choice winning game! The following games have been
+    randomly selected for you to play and evaluate. Select how awesome you think the games
+    are on a 1-5 star scale. We will unveil the Community Choice winner when all
+    prize-winning games are announced the first week of February.
+  </p>
+  <h2>Play and rate the following games</h2>
   <ol class="ballot">
     {% for game in ballot.get_games %}
       <li>

@@ -5,7 +5,7 @@
 {% block content %}
 {% if account %}
   <h1>Email confirmed!</h1>
-  <h3><a href="{% url games.create %}">Login and submit a game!</a></p>
+  <h3><a href="{% url vote.ballot %}">Login and Rate Games!</a></h3>
 {% else %}
   <h1>Something is wrong.</h1>
   <p class="failure">We could not activate your account. Please make sure that you have clicked the correct link in your e-mail or typed in the correct address.</p>

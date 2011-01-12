@@ -153,6 +153,10 @@ form.vote.changed input[type="submit"] {
     padding: 0;
     list-style-type: none;
 }
+.voting p {
+    width: 100%;
+    margin-bottom: 2em;
+}
 .ballot .game {
     display: block;
     overflow: hidden;

@@ -399,6 +399,8 @@ nav a:hover {color: white; text-decoration: none;}
 }
 
 .judging #content > h3,
+.games #content > h3,
+.voting #content > h3,
 .prizes #content > h3 {
     position: absolute;
     right: 0;
