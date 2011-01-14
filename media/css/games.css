@@ -60,6 +60,10 @@
 
 .thumb div {
     background: url("/media/img/game_placeholder.png");
+    background-position: center;
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+            background-size: cover;
     width: 71px;
     height: 71px;
     overflow: hidden;

@@ -103,7 +103,7 @@ def view_list(request):
     if not user or not user.is_superuser:
         filters.append(Q(is_approved=True))
 
-    games = Game.objects.filter(reduce(or_, filters, Q()))
+    games = Game.objects.filter(reduce(or_, filters, Q())).order_by('-id')
     return render(request, 'games/list.html', {'games': games})
 
 

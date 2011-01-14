@@ -1,9 +1,10 @@
 <section class="game" id="game-{{ game.id }}">
   <div class="thumb">
-    <div>
-  {% if game.screenshot_set.all %}
-    <img src="{{ game.screenshot_set.all.0.get_absolute_url }}">
-  {% endif %}
+    {% if game.screenshot_set.all %}
+      <div style="background-image: url({{ game.screenshot_set.all.0.get_absolute_url }});">
+    {% else %}
+      <div>
+    {% endif %}
     </div>
   </div>
   <h2><a href="{{ game.get_absolute_url }}">{{ game.name }}</a></h2>
