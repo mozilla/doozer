@@ -107,6 +107,20 @@ def view_list(request):
     return render(request, 'games/list.html', {'games': games})
 
 
+@enabled_or_404('ALLOW_GALLERY')
+def finalists(request):
+    """View a list of games."""
+    filters = []
+    user = request.user if request.user.is_authenticated() else None
+    if user and not user.is_superuser:
+        filters.append(Q(creator=user))
+    if not user or not user.is_superuser:
+        filters.append(Q(is_approved=True))
+
+    games = Game.objects.filter(reduce(or_, filters, Q()), id__in=settings.FINALIST_LIST).order_by('name')
+    return render(request, 'games/finalists.html', {'games': games})
+
+
 @login_required
 def mine(request):
     """View your own games."""

@@ -132,6 +132,8 @@ ALLOW_DELETING = True
 ALLOW_VOTING = False
 ALLOW_GALLERY = False
 
+FINALIST_LIST = []
+
 # Account activation period
 ACCOUNT_ACTIVATION_DAYS = 7
 

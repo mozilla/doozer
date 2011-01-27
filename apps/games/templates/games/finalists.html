@@ -1,0 +1,11 @@
+{% extends "games/base.html" %}
+
+{% block content %}
+  <h3><a href="{% url games.view_list %}">See all the entries &raquo;</a></h3>
+  <h1>Finalists</h1>
+  <article class="tile-list">
+  {% for game in games %}
+    {% include "games/game_listing.html" %}
+  {% endfor %}
+  </article>
+{% endblock %}
