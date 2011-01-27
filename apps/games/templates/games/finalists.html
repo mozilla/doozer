@@ -1,7 +1,14 @@
 {% extends "games/base.html" %}
 
 {% block content %}
-  <h3><a href="{% url games.view_list %}">See all the entries &raquo;</a></h3>
+<h3>
+  {% if settings.FINALIST_LIST %}
+    <a href="{% url games.view_list %}">See all the entries &raquo;</a><br/>
+  {% endif %}
+  {% if settings.ALLOW_VOTING %}
+    <a href="{% url vote.ballot %}">Vote on the Community Prize &raquo;</a>
+  {% endif %}
+</h3>
   <h1>Finalists</h1>
   <article class="tile-list">
   {% for game in games %}
