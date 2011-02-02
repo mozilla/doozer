@@ -1,18 +1,20 @@
 {% extends "base.html" %}
 {% load flatblock_tags %}
 
-{% block class %}home{% endblock %}
+{% block class %}home gameover{% endblock %}
 
 {% block content %}
-  <h1 class="home-title">&lt;&#x200a;GAME_ON&#x200a;&gt;</h1>
-  <div class="home-message">
-      {% flatblock "home" 3600 %}
-  </div>
+  <h1 class="home-title">&lt;&#x200a;GAME OVER&#x200a;&gt;</h1>
+    <div class="home-welcome">
+      <p>The votes are in, the winners are announced, and we're fresh out of quarters.
+      <p>Thanks to all who entered, the voters, and our judges! See you next time!
+    </div>
   {% if settings.ALLOW_VOTING %}
-  <div class="button">
-    <a href="{% url vote.ballot %}"><br>VOTE NOW!</a>
+  <div class="button right">
+    <a href="{% url games.view_list %}"><br>Play the Games</a>
+  </div>
+  <div class="button left">
+    <a href="{% url games.winners %}"><br>See the Winners</a>
   </div>
   {% endif %}
-  <img class="header-left" src="{{ MEDIA_URL }}img/ships-ani.png">
-  <img class="header-right" src="{{ MEDIA_URL }}img/raygun.png">
 {% endblock %}

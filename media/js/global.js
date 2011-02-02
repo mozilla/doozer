@@ -69,7 +69,7 @@ $.fn.vtruncate = function(opts) {
 // initializes a particle effect on the raygun, if supported.
 $(document).ready(function() {
     if (!!document.createElement('canvas').getContext && //checks for canvas capability
-        $('body').hasClass('home')) { //we're on the homepage
+        $('body').hasClass('home') && $('.header-right').length) { //we're on the homepage
             
         var $c = $('<canvas></canvas>');
         var raygun = $('.header-right').offset();

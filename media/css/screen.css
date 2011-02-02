@@ -117,6 +117,13 @@ nav.toc a {
     top: -1em;
     height: 575px;
 }
+.gameover #content {
+    background:transparent url('/media/img/lines-center.png') no-repeat center top;
+    padding-top: 0;
+    top: -1em;
+    height: auto;
+    margin-bottom: 20px;
+}
 .home-title {
     color: white;
     font-family: Karnivore, Verdana, sans-serif;
@@ -125,7 +132,9 @@ nav.toc a {
     text-shadow: 0 1px 2px rgba(0,0,0,.5);
     text-align: left;
 }
-
+.gameover .home-title {
+    text-align: center;
+}
 .home-welcome {
     margin-top: 65px;
     max-width: 440px;
@@ -139,6 +148,19 @@ nav.toc a {
 .home-welcome p {
     max-width: 440px;
 }
+
+.gameover .home-welcome {
+    text-align:center;
+    margin-top: 480px;
+    font-weight: bold;
+    width: auto;
+    padding: 0 100px;
+}
+.gameover .home-welcome, .gameover .home-welcome p {
+    max-width:inherit;
+    width: auto;
+}
+
 
 .header-left {
     position: absolute;
@@ -393,7 +415,17 @@ nav a:hover {color: white; text-decoration: none;}
        -moz-box-shadow: 0px 12px 3px rgba(0,0,0,0.2), 0px 2px 1px rgba(0,0,0,0.8), inset 0px 2px 0px rgba(255,255,255,0.5), inset 0px 12px 48px rgba(255,100,16,0.8), inset 0px -12px 0px rgba(0,0,0,0.2);
             box-shadow: 0px 12px 3px rgba(0,0,0,0.2), 0px 2px 1px rgba(0,0,0,0.8), inset 0px 2px 0px rgba(255,255,255,0.5), inset 0px 12px 48px rgba(255,100,16,0.8), inset 0px -12px 0px rgba(0,0,0,0.2);
 }
-
+.gameover .button a {
+    font-size: 36px;
+}
+.button.right {
+    right:150px;
+    left:auto;
+}
+.button.left {
+    left:150px;
+    right:auto;
+}
 #content {
     position: relative;
 }
@@ -458,6 +490,49 @@ body.prizes header, body.prizes footer, body.prizes h1{
     display: block;
     padding-left: 50%;
     height: 400px;
+    line-height: 1.5em;
+    width: 50%;
+    position: relative;
+}
+
+.winners .grandprize h2 {
+    font-size: 24px;
+    margin-bottom: 0;
+    padding-top: 20px;
+}
+
+.winners .grandprize .thumb {
+    position: static;
+    overflow: hidden;
+    background: none;
+    height: 350px;
+    width: auto;
+    margin-top: 2.2em;
+    padding:0;
+}
+
+.grandprize .button {
+    left: 425px;
+    margin: 0;
+    right: auto;
+    top: 280px;
+}
+
+.winners .grandprize .game h2 {
+    font-size:40px;
+}
+
+.winners .grandprize .action {
+    font-size: 2em;
+    padding: 12px 16px 8px;
+}
+
+.winners .grandprize {
+    background: #858242 url('/media/img/lines.png') no-repeat 93% top;
+    background: url('/media/img/lines.png') no-repeat 93% top rgba(0,0,0,.1);
+    display: block;
+    padding: 0 45% 0 5%;
+    height: 500px;
     line-height: 1.5em;
     width: 50%;
 }
@@ -552,6 +627,14 @@ ul.prizelist {
 .categories hgroup {
     margin-left: 78px;
     display: block;
+}
+
+.categories nav {
+    display:block;
+    margin: 0 0 16px 0;
+}
+.winners .categories hgroup {
+    margin-left: 80px;
 }
 
 .categories li {

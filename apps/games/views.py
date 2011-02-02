@@ -115,6 +115,12 @@ def finalists(request):
     return render(request, 'games/finalists.html', {'games': games})
 
 
+@enabled_or_404('ALLOW_GALLERY')
+def winners(request):
+    """View the list of winners."""
+    return render(request, 'games/winners.html')
+
+
 @login_required
 def mine(request):
     """View your own games."""
