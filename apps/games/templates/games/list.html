@@ -2,12 +2,7 @@
 
 {% block content %}
 <h3>
-  {% if settings.FINALIST_LIST %}
-    <a href="{% url games.finalists %}">See the finalists &raquo;</a><br/>
-  {% endif %}
-  {% if settings.ALLOW_VOTING %}
-    <a href="{% url vote.ballot %}">Vote on the Community Prize &raquo;</a>
-  {% endif %}
+  <a href="{% url games.winners %}">See the winners! &raquo;</a><br/>
 </h3>
   <h1>Game Gallery</h1>
   <article class="tile-list">
