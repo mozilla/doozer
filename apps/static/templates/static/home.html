@@ -10,12 +10,10 @@
       <p>The votes are in, the winners are announced, and we're fresh out of quarters.
       <p>Thanks to all who entered, the voters, and our judges!
     </div>
-  {% if settings.ALLOW_VOTING %}
   <div class="button right">
     <a href="{% url games.view_list %}"><br>Play the Games</a>
   </div>
   <div class="button left">
     <a href="{% url games.winners %}"><br>See the Winners</a>
   </div>
-  {% endif %}
 {% endblock %}
