@@ -44,6 +44,11 @@
     overflow: hidden;
 }
 
+.games .single p {
+    max-height: none;
+    min-height: 0;
+}
+
 .game nav {
     position: absolute;
     bottom: 2em;

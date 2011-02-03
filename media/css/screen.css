@@ -46,7 +46,7 @@ body {
 a:link, a:hover, a:active, a:focus, a:visited {color: #fdeb6a;}
 a:hover {color: #fdeb6a; text-decoration: underline;}
 
-h1, h2, h3 {font-family: OrbitronMed, "Courier New", monospace; text-transform: uppercase; letter-spacing: 1px;}
+h1, h2, h3, h4 {font-family: OrbitronMed, "Courier New", monospace; text-transform: uppercase; letter-spacing: 1px;}
 
 h1 {
     font-size: 3em;
@@ -501,13 +501,31 @@ body.prizes header, body.prizes footer, body.prizes h1{
     padding-top: 20px;
 }
 
+.winners #content > h2 {
+    margin: -30px 40px 20px 40px;
+    font-size: 14px;
+}
+
+.winners h4 {
+    color: rgba(255,255,255,.8);
+    font-size: 14px;
+    margin-top: .2em;
+}
+.winners h4 span {
+    color: #fff;
+}
+.winners .grandprize h4 {
+    margin-top: 1.2em;
+    margin-bottom: .5em;
+}
+
 .winners .grandprize .thumb {
     position: static;
     overflow: hidden;
     background: none;
     height: 350px;
-    width: auto;
-    margin-top: 2.2em;
+    width: 512px;
+    margin-top: 1em;
     padding:0;
 }
 
@@ -519,7 +537,7 @@ body.prizes header, body.prizes footer, body.prizes h1{
 }
 
 .winners .grandprize .game h2 {
-    font-size:40px;
+    font-size:38px;
 }
 
 .winners .grandprize .action {
@@ -531,10 +549,10 @@ body.prizes header, body.prizes footer, body.prizes h1{
     background: #858242 url('/media/img/lines.png') no-repeat 93% top;
     background: url('/media/img/lines.png') no-repeat 93% top rgba(0,0,0,.1);
     display: block;
-    padding: 0 45% 0 5%;
+    padding: 0 25% 0 5%;
     height: 500px;
     line-height: 1.5em;
-    width: 50%;
+    width: 70%;
 }
 
 ul.prizelist {
@@ -620,8 +638,13 @@ ul.prizelist {
     font-size: 24px;
 }
 
+.prizes .categories .tiny {
+    font-size: 19px;
+}
+
 .prizes .categories h3 {
-    font-size: 14px;
+    font-size: 16px;
+    margin-bottom: 0;
 }
 
 .categories hgroup {
