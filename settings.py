@@ -127,12 +127,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'core.context_processors.global_settings',
 )
 
-ALLOW_SUBMISSIONS = True
-ALLOW_EDITING = True
-ALLOW_DELETING = True
-ALLOW_VOTING = False
-ALLOW_GALLERY = False
-
 FINALIST_LIST = []
 
 # Account activation period
