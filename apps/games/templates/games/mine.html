@@ -1,3 +1,4 @@
+{% load waffle_tags %}
 {% extends "games/base.html" %}
 
 {% block content %}
@@ -9,7 +10,7 @@
     <h2>You haven't submitted any games yet.</h2>
   {% endfor %}
   </article>
-  {% if settings.ALLOW_SUBMISSIONS %}
+  {% waffle allow_submissions %}
   <h3><a href='{% url games.create %}'>Submit a new game</a></h3>
-  {% endif %}
+  {% endwaffle %}
 {% endblock %}

@@ -1,3 +1,4 @@
+{% load waffle_tags %}
 {% extends "games/base.html" %}
 
 {% block content %}
@@ -5,9 +6,9 @@
   {% if settings.FINALIST_LIST %}
     <a href="{% url games.view_list %}">See all the entries &raquo;</a><br/>
   {% endif %}
-  {% if settings.ALLOW_VOTING %}
+  {% waffle allow_voting %}
     <a href="{% url vote.ballot %}">Vote on the Community Prize &raquo;</a>
-  {% endif %}
+  {% endwaffle %}
 </h3>
   <h1>Finalists</h1>
   <article class="tile-list">

@@ -8,13 +8,14 @@ from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 
-from core.decorators import enabled_or_404
+from waffle.decorators import waffle
+
 from core.template import render
 from games.forms import GameForm, ScreenshotForm
 from games.models import Game, Screenshot
 
 
-@enabled_or_404('ALLOW_SUBMISSIONS')
+@waffle('allow_submissions')
 @login_required
 def create(request):
     """Create a new game."""
@@ -33,7 +34,7 @@ def create(request):
     return render(request, 'games/create.html', {'form': form})
 
 
-@enabled_or_404('ALLOW_EDITING')
+@waffle('allow_editing')
 @login_required
 def edit(request, game_id):
     """Edit an existing game."""
@@ -60,7 +61,7 @@ def edit(request, game_id):
     return render(request, 'games/edit.html', c)
 
 
-@enabled_or_404('ALLOW_DELETING')
+@waffle('allow_deleting')
 @login_required
 def delete(request, game_id):
     """Delete an existing game."""
@@ -92,7 +93,7 @@ def view(request, game_id, slug=None):
     return render(request, 'games/view.html', {'game': game})
 
 
-@enabled_or_404('ALLOW_GALLERY')
+@waffle('allow_gallery')
 def view_list(request):
     """View a list of games."""
     # TODO: Paginate.
@@ -107,7 +108,7 @@ def view_list(request):
     return render(request, 'games/list.html', {'games': games})
 
 
-@enabled_or_404('ALLOW_GALLERY')
+@waffle('allow_gallery')
 def finalists(request):
     """View the list of finalists."""
     games = (Game.objects.filter(id__in=settings.FINALIST_LIST)
@@ -115,7 +116,7 @@ def finalists(request):
     return render(request, 'games/finalists.html', {'games': games})
 
 
-@enabled_or_404('ALLOW_GALLERY')
+@waffle('allow_gallery')
 def winners(request):
     """View the list of winners."""
     return render(request, 'games/winners.html')
