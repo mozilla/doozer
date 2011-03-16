@@ -107,6 +107,7 @@ INSTALLED_APPS = (
     'registration',
     'flatblocks',
     'media_bundler',
+    'waffle',
     'csp',
     'games',
     'vote',
