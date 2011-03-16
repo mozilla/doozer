@@ -3,14 +3,15 @@ from django.http import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import get_object_or_404
 from django.views.decorators.http import require_POST
 
+from waffle.decorators import waffle
+
 from core.template import render
-from core.decorators import enabled_or_404
 from games.models import Game
 from vote.forms import VoteForm
 from vote.models import Ballot, Vote
 
 
-@enabled_or_404('ALLOW_VOTING')
+@waffle('allow_voting')
 @login_required
 def ballot(request):
     """Display the list of games this user can vote on."""
@@ -19,7 +20,7 @@ def ballot(request):
     return render(request, 'vote/ballot.html', {'ballot': ballot})
 
 
-@enabled_or_404('ALLOW_VOTING')
+@waffle('allow_voting')
 @login_required
 @require_POST
 def vote(request):
