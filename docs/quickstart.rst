@@ -136,6 +136,20 @@ with Django's ``createsuperuser`` management command::
 Just follow the prompts.
 
 
+Uploads
+=======
+
+Doozer has the ability to upload images for screenshots. To make this work,
+you'll need to create a directory (it's specifically *not* under version
+control)::
+
+    mkdir -p media/upload
+    chmod -R a+w media/upload
+
+Whoever the webserver is running as needs to be able to write to
+``media/upload``.
+
+
 Up and Running
 ==============
 
@@ -145,3 +159,19 @@ To see if you've got everything up and running, start the Django dev server::
 
 and navigate to ``http://localhost:8000/``. You should see the Doozer home
 page!
+
+
+Deploying with Apache
+=====================
+
+If you're deploying with Apache and ``mod_wsgi``, you'll need to know a couple
+things:
+
+* The WSGI endpoint is ``wsgi/doozer.wsgi``.
+* The ``WSGIScriptAlias`` should be ``/``.
+* You'll need to set up a couple ``Alias`` directives (below).
+
+::
+
+    Alias /media /path/to/doozer/media
+    Alias /admin-media /path/to/doozer/vendor/django/django/contrib/admin/media
