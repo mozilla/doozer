@@ -1,3 +1,5 @@
+{% load waffle_tags %}
+
 <section class="game" id="game-{{ game.id }}">
   <div class="thumb">
     {% if game.screenshot_set.all %}
@@ -14,8 +16,10 @@
     {% if game.source %}
       <a class="action" href="{{ game.source }}">See the source</a>
     {% endif %}
-    {% if game.creator == request.user and settings.ALLOW_EDITING %}
-      <a class="action" href="{% url games.edit game.id %}">Edit</a>
-    {% endif %}
+    {% waffle allow_editing %}
+      {% if game.creator == request.user %}
+        <a class="action" href="{% url games.edit game.id %}">Edit</a>
+      {% endif %}
+    {% endwaffle %}
   </nav>
 </section>

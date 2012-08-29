@@ -1,4 +1,5 @@
 {% extends "games/base.html" %}
+{% load waffle_tags %}
 
 {% block content %}
   <h1>{{ game.name }}</h1>
@@ -12,22 +13,26 @@
         </li>
       {% empty %}
         <li>No Screenshots Available</li>
-        {% if game.creator == request.user and settings.ALLOW_EDITING %}
-          <h3><a href="{% url games.edit game.id %}">Add Screenshots</a></h3>
-        {% endif %}
+        {% waffle allow_editing %}
+          {% if game.creator == request.user %}
+            <h3><a href="{% url games.edit game.id %}">Add Screenshots</a></h3>
+          {% endif %}
+        {% endwaffle %}
       {% endfor %}
       </ul>
     </section>
-    
+
     <section class="description">
       <ul class="links">
         <li><a class="action" href="{{ game.url }}">Play the game</a></li>
         {% if game.source %}
           <li><a class="action" href="{{ game.source }}">See the source</a></li>
         {% endif %}
-        {% if game.creator == request.user and settings.ALLOW_EDITING %}
-          <li><a class="action" href="{% url games.edit game.id %}">Edit</a></li>
-        {% endif %}
+        {% waffle allow_editing %}
+          {% if game.creator == request.user %}
+            <li><a class="action" href="{% url games.edit game.id %}">Edit</a></li>
+          {% endif %}
+        {% endwaffle %}
       </ul>
 
       <h2>Description</h2>
@@ -38,7 +43,7 @@
         {{ game.resources|linebreaks }}
       {% endif %}
     </section>
-    
+
     {% if not game.screenshot_set.all %}
     {% endif %}
 

@@ -1,5 +1,8 @@
-from django.core.urlresolvers import reverse
 from django.conf import settings
+from django.core.urlresolvers import reverse
+
+import waffle
+
 
 def nav(request):
     menu = {
@@ -13,9 +16,10 @@ def nav(request):
         ],
         'location' : request.path,
     }
-    if not settings.ALLOW_GALLERY:
+    if not waffle.is_active(request, 'allow_gallery'):
         menu['menu'].pop(1)
     return menu
+
 
 def global_settings(request):
     return {'settings': settings}
