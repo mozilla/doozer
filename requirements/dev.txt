@@ -3,7 +3,7 @@
 
 -r prod.txt
 
-Werkzeug==0.5.1
+Werkzeug==0.15.3
 sqlparse==0.1.1
 nose==0.11.1
 pylint==0.20.0
