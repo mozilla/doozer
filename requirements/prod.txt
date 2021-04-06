@@ -6,5 +6,5 @@
 -e git://github.com/rnk/django-media-bundler.git#egg=django-media-bundler
 -e git://github.com/mozilla/django-csp.git#egg=django-csp
 python-memcached
-django-registration==0.7
+django-registration==3.1.2
 -e git://github.com/alex/django-templatetag-sugar.git#egg=templatetag_sugar
